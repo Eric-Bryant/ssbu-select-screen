@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Fighter',
@@ -22,9 +22,6 @@ export default {
   },
   data() {
     return {}
-  },
-  computed: {
-    ...mapGetters(['getSelectedFighter'])
   },
   methods: {
     ...mapActions(['setSelectedFighter']),
