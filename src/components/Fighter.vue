@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="fighter"
-    :class="{ selected: getSelectedFighter === name }"
-    @click="selectFighter"
-  >
+  <div class="fighter" :class="{ selected: isSelected }" @click="selectFighter">
     <img src="https://shmickle.github.io/ssbu/media/thumbnails/mario.png" alt />
     <p>{{ name }}</p>
   </div>
