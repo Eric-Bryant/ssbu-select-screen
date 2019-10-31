@@ -1,7 +1,11 @@
 <template>
   <div class="menu-wrapper">
-    <Fighter />
-    <Fighter />
+    <Fighter
+      v-for="(fighter, index) in this.$store.state.fighters"
+      :key="index"
+      :isSelected="fighter.isSelected"
+      :name="fighter.name"
+    />
   </div>
 </template>
 

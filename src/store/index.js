@@ -5,16 +5,52 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    selectedFighter: null
+    fighters: [
+      {
+        id: 1,
+        name: 'Mario',
+        thumbnail: '',
+        franchise: '',
+        isSelected: false
+      },
+      {
+        id: 2,
+        name: 'Luigi',
+        thumbnail: '',
+        franchise: '',
+        isSelected: false
+      },
+      {
+        id: 3,
+        name: 'Bowser',
+        thumbnail: '',
+        franchise: '',
+        isSelected: false
+      }
+    ]
   },
   getters: {
     getSelectedFighter: state => {
-      return state.selectedFighter
+      let selectedFighter = state.fighters.filter(fighter => {
+        return fighter.isSelected
+      })
+
+      if (selectedFighter.length > 0) {
+        return selectedFighter[0].name
+      } else {
+        return ''
+      }
     }
   },
   mutations: {
-    setSelectedFighter: (state, fighter) => {
-      state.selectedFighter = fighter
+    setSelectedFighter: (state, selectedFighter) => {
+      state.fighters.map(fighter => {
+        if (fighter.name == selectedFighter) {
+          fighter.isSelected = true
+        } else {
+          fighter.isSelected = false
+        }
+      })
     }
   },
   actions: {

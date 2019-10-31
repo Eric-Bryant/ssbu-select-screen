@@ -10,14 +10,9 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Fighter',
+  props: ['isSelected', 'name'],
   data() {
-    return {
-      id: '',
-      name: 'Default',
-      thumbnail: '',
-      franchise: '',
-      isSelected: false
-    }
+    return {}
   },
   computed: {
     ...mapGetters(['getSelectedFighter'])
