@@ -1,7 +1,11 @@
 <template>
-  <div class="fighter" :class="{ selected: isSelected }" @click="selectFighter">
+  <div
+    class="fighter"
+    :class="{ selected: fighter.isSelected }"
+    @click="selectFighter"
+  >
     <img src="https://shmickle.github.io/ssbu/media/thumbnails/mario.png" alt />
-    <p>{{ name }}</p>
+    <p>{{ fighter.name }}</p>
   </div>
 </template>
 
@@ -10,7 +14,12 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Fighter',
-  props: ['isSelected', 'name'],
+  props: {
+    fighter: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {}
   },
@@ -20,10 +29,10 @@ export default {
   methods: {
     ...mapActions(['setSelectedFighter']),
     selectFighter() {
-      this.isSelected = !this.isSelected
+      this.fighter.isSelected = !this.fighter.isSelected
 
-      if (this.isSelected) {
-        this.setSelectedFighter(this.name)
+      if (this.fighter.isSelected) {
+        this.setSelectedFighter(this.fighter.name)
       } else {
         this.setSelectedFighter('')
       }
