@@ -25,7 +25,9 @@ export default {
   },
   computed: {
     getThumbnailURL() {
-      return `/media/thumbnails/${this.fighter.name.toLowerCase()}.png`
+      return require('../assets/thumbnails/' +
+        this.fighter.name.toLowerCase() +
+        '.png')
     }
   },
   methods: {
