@@ -31,12 +31,12 @@ export default new Vuex.Store({
   },
   getters: {
     getSelectedFighter: state => {
-      let selectedFighter = state.fighters.filter(fighter => {
+      let selectedFighter = state.fighters.find(fighter => {
         return fighter.isSelected
       })
 
-      if (selectedFighter.length > 0) {
-        return selectedFighter[0].name
+      if (selectedFighter !== undefined) {
+        return selectedFighter.name
       } else {
         return ''
       }
