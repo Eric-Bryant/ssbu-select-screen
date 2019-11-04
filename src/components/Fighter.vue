@@ -4,7 +4,7 @@
     :class="{ selected: fighter.isSelected }"
     @click="selectFighter"
   >
-    <img src="https://shmickle.github.io/ssbu/media/thumbnails/mario.png" alt />
+    <img :src="getThumbnailURL" alt />
     <p>{{ fighter.name }}</p>
   </div>
 </template>
@@ -22,6 +22,11 @@ export default {
   },
   data() {
     return {}
+  },
+  computed: {
+    getThumbnailURL() {
+      return `/media/thumbnails/${this.fighter.name.toLowerCase()}.png`
+    }
   },
   methods: {
     ...mapActions(['setSelectedFighter']),
