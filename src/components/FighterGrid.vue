@@ -1,7 +1,7 @@
 <template>
   <div class="menu-wrapper">
     <FighterThumbnail
-      v-for="(fighter, index) in this.$store.state.fighters"
+      v-for="(fighter, index) in fighters"
       :key="index"
       :fighter="fighter"
     />
@@ -16,6 +16,11 @@ export default {
   components: { FighterThumbnail },
   data() {
     return {}
+  },
+  computed: {
+    fighters() {
+      return this.$store.state.fighters
+    }
   }
 }
 </script>
