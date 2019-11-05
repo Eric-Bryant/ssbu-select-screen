@@ -9,6 +9,9 @@ export default new Vuex.Store({
     fightersLoaded: false
   },
   getters: {
+    getFighters: state => {
+      return state.fighters
+    },
     getSelectedFighter: state => {
       let selectedFighter = state.fighters.find(fighter => {
         return fighter.isSelected

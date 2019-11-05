@@ -1,7 +1,7 @@
 <template>
   <div class="menu-wrapper">
     <FighterThumbnail
-      v-for="(fighter, index) in fighters"
+      v-for="(fighter, index) in getFighters"
       :key="index"
       :fighter="fighter"
     />
@@ -10,6 +10,7 @@
 
 <script>
 import FighterThumbnail from './FighterThumbnail'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'FighterGrid',
@@ -18,9 +19,7 @@ export default {
     return {}
   },
   computed: {
-    fighters() {
-      return this.$store.state.fighters
-    }
+    ...mapGetters(['getFighters'])
   }
 }
 </script>
