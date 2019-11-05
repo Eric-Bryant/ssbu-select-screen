@@ -13,7 +13,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Fighter',
+  name: 'FighterThumbnail',
   props: {
     fighter: {
       type: Object,

@@ -1,6 +1,6 @@
 <template>
   <div class="menu-wrapper">
-    <Fighter
+    <FighterThumbnail
       v-for="(fighter, index) in this.$store.state.fighters"
       :key="index"
       :fighter="fighter"
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import Fighter from './Fighter'
+import FighterThumbnail from './FighterThumbnail'
 
 export default {
   name: 'FighterGrid',
-  components: { Fighter },
+  components: { FighterThumbnail },
   data() {
     return {}
   }
