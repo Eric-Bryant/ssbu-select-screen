@@ -25,7 +25,7 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    setInitialFighters: (state, fighters) => {
+    SET_INITIAL_FIGTHERS: (state, fighters) => {
       fighters.map(fighter => {
         fighter['isSelected'] = false
         state.fighters.push(fighter)
@@ -33,7 +33,7 @@ export default new Vuex.Store({
 
       state.fightersLoaded = true
     },
-    setSelectedFighter: (state, selectedFighter) => {
+    SET_SELECTED_FIGHTER: (state, selectedFighter) => {
       state.fighters.map(fighter => {
         if (fighter.name == selectedFighter) {
           fighter.isSelected = true
@@ -45,10 +45,10 @@ export default new Vuex.Store({
   },
   actions: {
     setInitialFighterState: (context, fighters) => {
-      context.commit('setInitialFighters', fighters)
+      context.commit('SET_INITIAL_FIGTHERS', fighters)
     },
     setSelectedFighterState: (context, fighter) => {
-      context.commit('setSelectedFighter', fighter)
+      context.commit('SET_SELECTED_FIGHTER', fighter)
     }
   },
   modules: {}
