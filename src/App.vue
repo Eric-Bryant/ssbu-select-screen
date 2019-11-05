@@ -3,22 +3,23 @@
     <Header />
     <FighterGrid v-if="fightersLoaded" />
     <p class="loading-msg" v-else>Loading fighters...</p>
+    <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import FighterGrid from './components/FighterGrid'
-import { mapActions } from 'vuex'
+import FighterSelected from './components/FighterSelected'
+import { mapActions, mapState, mapGetters } from 'vuex'
 import axios from 'axios'
 
 export default {
   name: 'app',
-  components: { Header, FighterGrid },
+  components: { Header, FighterGrid, FighterSelected },
   computed: {
-    fightersLoaded() {
-      return this.$store.state.fightersLoaded
-    }
+    ...mapState(['fightersLoaded']),
+    ...mapGetters(['getSelectedFighter', 'getFighters'])
   },
   methods: {
     ...mapActions(['setInitialFighterState'])

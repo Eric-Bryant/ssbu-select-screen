@@ -18,7 +18,7 @@ export default new Vuex.Store({
       })
 
       if (selectedFighter !== undefined) {
-        return selectedFighter.name
+        return selectedFighter
       } else {
         return ''
       }
