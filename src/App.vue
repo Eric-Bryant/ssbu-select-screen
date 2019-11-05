@@ -31,7 +31,7 @@ export default {
         this.setInitialFighterState(response.data)
       })
       .catch(error => {
-        console.log(error)
+        alert(error)
       })
   }
 }
