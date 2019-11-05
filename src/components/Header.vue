@@ -29,6 +29,10 @@ export default {}
   width: 100vw;
   height: 28px;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 769px) {
+    height: auto;
+  }
 }
 
 .btn {

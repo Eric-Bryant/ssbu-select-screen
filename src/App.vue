@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <FighterGrid v-if="this.$store.state.fightersLoaded" />
-    <p v-else style="color: white; text-align: center">Loading fighters...</p>
+    <p class="loading-msg" v-else>Loading fighters...</p>
   </div>
 </template>
 
@@ -49,5 +49,17 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.loading-msg {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #e7e7e7;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
+    3px 3px 1px #111111;
+  text-align: center;
 }
 </style>
