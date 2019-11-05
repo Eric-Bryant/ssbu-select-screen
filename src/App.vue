@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <FighterGrid v-if="this.$store.state.fightersLoaded" />
+    <FighterGrid v-if="fightersLoaded" />
     <p class="loading-msg" v-else>Loading fighters...</p>
   </div>
 </template>
@@ -15,6 +15,11 @@ import axios from 'axios'
 export default {
   name: 'app',
   components: { Header, FighterGrid },
+  computed: {
+    fightersLoaded() {
+      return this.$store.state.fightersLoaded
+    }
+  },
   methods: {
     ...mapActions(['setInitialFighterState'])
   },
