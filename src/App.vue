@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <Header />
-    <FighterGrid />
+    <FighterGrid v-if="this.$store.state.fightersLoaded" />
+    <p v-else style="color: white; text-align: center">Loading fighters...</p>
   </div>
 </template>
 
@@ -22,6 +23,9 @@ export default {
       .get('https://ssbu-select-screen.firebaseio.com/fighters.json')
       .then(response => {
         this.setInitialFighterState(response.data)
+      })
+      .catch(error => {
+        console.log(error)
       })
   }
 }

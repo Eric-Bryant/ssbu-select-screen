@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    fighters: []
+    fighters: [],
+    fightersLoaded: false
   },
   getters: {
     getSelectedFighter: state => {
@@ -26,6 +27,8 @@ export default new Vuex.Store({
         fighter['isSelected'] = false
         state.fighters.push(fighter)
       })
+
+      state.fightersLoaded = true
     },
     setSelectedFighter: (state, selectedFighter) => {
       state.fighters.map(fighter => {
