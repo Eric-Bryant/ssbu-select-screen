@@ -1,0 +1,543 @@
+{
+  "fighters": [
+    {
+      "id": 1,
+      "name": "Mario",
+      "franchise": "Super Mario Bros.",
+      "bio": "Mario is an all-around fighter who uses his wide variety of techniques to respond to any situation. In Super Smash Bros. Ultimate, he shows up in his Wedding tux and his Builder outfit, and Cappy even makes an appearance!",
+      "videoID": "INk1W8OujQI"
+    },
+    {
+      "id": 2,
+      "name": "Donkey Kong",
+      "franchise": "Donkey Kong",
+      "bio": "His charged punch is one of the strongest attacks in the game! In Super Smash Bros. Ultimate, his Final Smash has been updated from Konga Beat to a flurry of punches!",
+      "videoID": "K7IsUGeFXP0"
+    },
+    {
+      "id": 3,
+      "name": "Link",
+      "franchise": "The Legend of Zelda",
+      "bio": "Link has been redesigned to match his appearance in The Legend of Zelda: Breath of the Wild. He can now pick up arrows he's fired, and his bombs have been upgraded to remote bombs, so you can set them off when the timing is just right!",
+      "videoID": "kfeUdBi67G4"
+    },
+    {
+      "id": 4,
+      "name": "Samus",
+      "franchise": "Metroid",
+      "bio": "With her Charge Shot, Missile, and Bomb, Samus has three different projectiles to keep her opponents in check from a distance. When fully charged up, her Charge Shot is quite powerful. For her Final Smash, she launches a wide laser beam that can be moved up and down!",
+      "videoID": "I9tcvSeemVo"
+    },
+    {
+      "id": 4.1,
+      "name": "Dark Samus",
+      "franchise": "Metroid",
+      "bio": "Dark Samus joins the battle as Samus's echo fighter.With floatier movement, she's a little different from Samus--and she doesn't roll when dodging or jumping. If you look closely, you can see that her bombs and missiles look a little different, too.",
+      "videoID": "sXG-oI6VChg"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 6,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 7,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 8,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 9,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 10,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 11,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 12,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 13,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 13.1,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 14,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 15,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 16,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 17,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 18,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 19,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 20,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 21,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 21.1,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 22,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 23,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 24,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 25,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 25.1,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 26,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 27,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 28,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 28.1,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 29,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 30,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 31,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 32,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 33,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 36,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 37,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 38,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 39,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 40,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 41,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 42,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 43,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 44,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 45,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 46,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 47,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 48,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 49,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 50,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 51,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 52,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 53,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 54,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 55,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 56,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 57,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 58,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 59,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 60,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 60.1,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 61,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 62,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 63,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 64,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 65,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 66,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 66.1,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 67,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 68,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 69,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 70,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 71,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    },
+    {
+      "id": 72,
+      "name": "",
+      "franchise": "",
+      "bio": "",
+      "videoID": ""
+    }
+  ]
+}

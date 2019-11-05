@@ -8,10 +8,22 @@
 <script>
 import Header from './components/Header'
 import FighterGrid from './components/FighterGrid'
+import { mapActions } from 'vuex'
+import axios from 'axios'
 
 export default {
   name: 'app',
-  components: { Header, FighterGrid }
+  components: { Header, FighterGrid },
+  methods: {
+    ...mapActions(['setInitialFighterState'])
+  },
+  created() {
+    axios
+      .get('https://ssbu-select-screen.firebaseio.com/fighters.json')
+      .then(response => {
+        this.setInitialFighterState(response.data)
+      })
+  }
 }
 </script>
 

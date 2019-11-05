@@ -5,29 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    fighters: [
-      {
-        id: 1,
-        name: 'Mario',
-        thumbnail: '',
-        franchise: '',
-        isSelected: false
-      },
-      {
-        id: 2,
-        name: 'Luigi',
-        thumbnail: '',
-        franchise: '',
-        isSelected: false
-      },
-      {
-        id: 3,
-        name: 'Bowser',
-        thumbnail: '',
-        franchise: '',
-        isSelected: false
-      }
-    ]
+    fighters: []
   },
   getters: {
     getSelectedFighter: state => {
@@ -43,6 +21,12 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    setInitialFighters: (state, fighters) => {
+      fighters.map(fighter => {
+        fighter['isSelected'] = false
+        state.fighters.push(fighter)
+      })
+    },
     setSelectedFighter: (state, selectedFighter) => {
       state.fighters.map(fighter => {
         if (fighter.name == selectedFighter) {
@@ -54,6 +38,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    setInitialFighterState: (context, fighters) => {
+      context.commit('setInitialFighters', fighters)
+    },
     setSelectedFighter: (context, fighter) => {
       context.commit('setSelectedFighter', fighter)
     }

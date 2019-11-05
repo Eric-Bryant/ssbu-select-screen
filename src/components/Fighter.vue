@@ -24,10 +24,17 @@ export default {
     return {}
   },
   computed: {
+    parsedNameForAssets() {
+      const parsedName = this.fighter.name
+        .toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/\./g, '')
+        .replace(/&/g, 'and')
+
+      return parsedName
+    },
     getThumbnailURL() {
-      return require('../assets/thumbnails/' +
-        this.fighter.name.toLowerCase() +
-        '.png')
+      return require(`../assets/thumbnails/${this.parsedNameForAssets}.png`)
     }
   },
   methods: {
