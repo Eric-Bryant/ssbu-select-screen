@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Video',
+  name: 'FighterVideo',
   props: ['videoID']
 }
 </script>
