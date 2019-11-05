@@ -14,6 +14,9 @@
 export default {
   name: 'FighterSelected',
   props: ['fighter'],
+  data() {
+    return {}
+  },
   computed: {
     parsedNameForAssets() {
       const parsedName = this.fighter.name

@@ -19,7 +19,7 @@ export default {
   components: { Header, FighterGrid, FighterSelected },
   computed: {
     ...mapState(['fightersLoaded']),
-    ...mapGetters(['getSelectedFighter', 'getFighters'])
+    ...mapGetters(['getSelectedFighter'])
   },
   methods: {
     ...mapActions(['setInitialFighterState'])
