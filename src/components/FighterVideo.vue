@@ -12,7 +12,12 @@
 <script>
 export default {
   name: 'FighterVideo',
-  props: ['videoID']
+  props: {
+    videoID: {
+      type: String,
+      required: true
+    }
+  }
 }
 </script>
 
