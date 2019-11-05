@@ -38,14 +38,14 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setSelectedFighter']),
+    ...mapActions(['setSelectedFighterState']),
     selectFighter() {
       this.fighter.isSelected = !this.fighter.isSelected
 
       if (this.fighter.isSelected) {
-        this.setSelectedFighter(this.fighter.name)
+        this.setSelectedFighterState(this.fighter.name)
       } else {
-        this.setSelectedFighter('')
+        this.setSelectedFighterState('')
       }
     }
   }

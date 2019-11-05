@@ -44,7 +44,7 @@ export default new Vuex.Store({
     setInitialFighterState: (context, fighters) => {
       context.commit('setInitialFighters', fighters)
     },
-    setSelectedFighter: (context, fighter) => {
+    setSelectedFighterState: (context, fighter) => {
       context.commit('setSelectedFighter', fighter)
     }
   },
