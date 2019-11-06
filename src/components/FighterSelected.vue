@@ -97,6 +97,7 @@ export default {
   .selected-fighter img {
     object-fit: contain;
     max-height: 235px;
+    height: 235px;
     width: 100%;
   }
 }
