@@ -11,22 +11,16 @@
 </template>
 
 <script>
+import parsedNameMixin from '../mixins/parsedNameMixin'
+
 export default {
   name: 'FighterSelected',
   props: ['fighter'],
+  mixins: [parsedNameMixin],
   data() {
     return {}
   },
   computed: {
-    parsedNameForAssets() {
-      const parsedName = this.fighter.name
-        .toLowerCase()
-        .replace(/ /g, '-')
-        .replace(/\./g, '')
-        .replace(/&/g, 'and')
-
-      return parsedName
-    },
     getFullCharacterImage() {
       return require(`../assets/characters/${this.parsedNameForAssets}.png`)
     }
