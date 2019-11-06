@@ -1,6 +1,7 @@
 # ssbu-select-screen
 
 [Sprite Reference](https://www.spriters-resource.com/nintendo_switch/supersmashbrosultimate/)
+[Sound Reference](https://www.sounds-resource.com/nintendo_switch/supersmashbrosultimate/sound/16070/)
 
 ## Project setup
 
