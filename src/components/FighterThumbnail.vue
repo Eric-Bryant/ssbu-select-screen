@@ -1,7 +1,7 @@
 <template>
   <div
     class="fighter"
-    :class="{ selected: fighter.isSelected }"
+    :class="[{ selected: fighter.isSelected }, parsedNameForAssets]"
     @click="selectFighter"
   >
     <img :src="getThumbnailURL" alt />
@@ -118,6 +118,28 @@ export default {
 
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  &.mr-game-and-watch,
+  &.pokemon-trainer,
+  &.mii-swordfighter {
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  &.captain-falcon,
+  &.piranha-plant {
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  &.zero-suit-samus,
+  &.rosalina-and-luma {
+    p {
+      font-size: 1rem;
     }
   }
 }
