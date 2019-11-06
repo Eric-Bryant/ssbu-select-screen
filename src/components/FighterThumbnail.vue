@@ -132,7 +132,7 @@ export default {
   &.captain-falcon,
   &.piranha-plant {
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
 
