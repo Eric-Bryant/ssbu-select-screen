@@ -120,27 +120,5 @@ export default {
       cursor: pointer;
     }
   }
-
-  &.mr-game-and-watch,
-  &.pokemon-trainer,
-  &.mii-swordfighter {
-    p {
-      font-size: 0.9rem;
-    }
-  }
-
-  &.captain-falcon,
-  &.piranha-plant {
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  &.zero-suit-samus,
-  &.rosalina-and-luma {
-    p {
-      font-size: 1rem;
-    }
-  }
 }
 </style>
