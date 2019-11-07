@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     getThumbnailURL() {
-      return require(`../assets/thumbnails/${this.parsedNameForAssets}.png`)
+      return require(`../assets/thumbnails/${this.parsedNameForAssets}-min.png`)
     }
   },
   methods: {
