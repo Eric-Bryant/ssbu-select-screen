@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .menu-wrapper {
   margin: 0px auto 0;
-  width: 90vw;
+  width: 85vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
