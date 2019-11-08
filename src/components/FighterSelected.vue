@@ -2,7 +2,7 @@
   <div class="character-selection">
     <div class="character-portrait">
       <div class="selected-fighter">
-        <img :src="getFullCharacterImage" />
+        <img :src="getSelectedFighterImage" />
         <p>{{ fighter.name }}</p>
         <p>Info</p>
       </div>
@@ -21,8 +21,8 @@ export default {
     return {}
   },
   computed: {
-    getFullCharacterImage() {
-      return require(`../assets/characters/${this.parsedNameForAssets}.png`)
+    getSelectedFighterImage() {
+      return require(`../assets/characters/${this.parsedNameForAssets}/selected0-min.png`)
     }
   }
 }
