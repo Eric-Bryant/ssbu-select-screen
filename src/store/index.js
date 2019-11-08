@@ -41,6 +41,13 @@ export default new Vuex.Store({
           fighter.isSelected = false
         }
       })
+    },
+    SET_FIGHTER_ALT: (state, fighter) => {
+      state.fighters.map(character => {
+        if (character.name == fighter.name) {
+          character.alt = fighter.alt
+        }
+      })
     }
   },
   actions: {
@@ -49,6 +56,9 @@ export default new Vuex.Store({
     },
     setSelectedFighterState: (context, fighter) => {
       context.commit('SET_SELECTED_FIGHTER', fighter)
+    },
+    setFighterAltState: (context, fighter) => {
+      context.commit('SET_FIGHTER_ALT', fighter)
     }
   },
   modules: {}

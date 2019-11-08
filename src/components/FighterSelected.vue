@@ -4,13 +4,14 @@
       <div class="selected-fighter">
         <img :src="getSelectedFighterImage" />
         <p>{{ fighter.name }}</p>
-        <p>Info</p>
+        <p @click="changeFighterAlt">Info</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import parsedNameMixin from '../mixins/parsedNameMixin'
 
 export default {
@@ -22,7 +23,16 @@ export default {
   },
   computed: {
     getSelectedFighterImage() {
-      return require(`../assets/characters/${this.parsedNameForAssets}/selected0-min.png`)
+      return require(`../assets/characters/${this.parsedNameForAssets}/selected${this.fighter.alt}-min.png`)
+    }
+  },
+  methods: {
+    ...mapActions(['setFighterAltState']),
+    changeFighterAlt() {
+      if (this.fighter.alt < 7 && !this.parsedNameForAssets.includes('mii')) {
+        this.fighter.alt++
+        this.setFighterAltState(this.fighter)
+      }
     }
   }
 }
