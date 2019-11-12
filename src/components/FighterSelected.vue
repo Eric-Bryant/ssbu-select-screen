@@ -5,13 +5,17 @@
       <div class="select-border-left"></div>
       <div class="character-portrait">
         <div class="selected-fighter">
-          <img :src="getSelectedFighterImage" />
-          <!-- <p>{{ fighter.name }}</p>
-          <p @click="changeFighterAlt">Info</p>-->
+          <img
+            :src="getSelectedFighterImage"
+            @click="changeFighterAlt"
+            title="Click to Change Alternate Costumes"
+          />
         </div>
         <div class="fighter-info-wrapper">
           <div class="fighter-info">
-            <p>{{ fighter.name }}</p>
+            <img class="series-icon" :src="getSeriesIcon" />
+            <p class="fighter-name">{{ fighter.name }}</p>
+            <button class="more-info">View Bio</button>
           </div>
         </div>
       </div>
@@ -38,6 +42,9 @@ export default {
   computed: {
     getSelectedFighterImage() {
       return require(`../assets/characters/${this.parsedNameForAssets}/selected${this.fighter.alt}-min.png`)
+    },
+    getSeriesIcon() {
+      return require(`../assets/series-icons/${this.parsedFranchiseForAssets}.png`)
     }
   },
   methods: {
@@ -45,6 +52,9 @@ export default {
     changeFighterAlt() {
       if (this.fighter.alt < 7 && !this.parsedNameForAssets.includes('mii')) {
         this.fighter.alt++
+        this.setFighterAltState(this.fighter)
+      } else if (this.fighter.alt == 7) {
+        this.fighter.alt = 0
         this.setFighterAltState(this.fighter)
       }
     }
@@ -126,8 +136,8 @@ export default {
     rgba(200, 76, 113, 1) 15.5%,
     rgba(200, 76, 113, 1) 25%,
     rgba(176, 29, 98, 1) 25.5%,
-    rgba(176, 29, 98, 1) 55%,
-    rgba(184, 181, 210, 1) 55.5%
+    rgba(176, 29, 98, 1) 45%,
+    rgba(184, 181, 210, 1) 45.5%
   );
   transition: opacity 0.3s ease;
 
@@ -140,9 +150,10 @@ export default {
     img {
       object-fit: contain;
       max-height: 235px;
-      width: 105%;
+      width: 100%;
       height: 100%;
       margin-bottom: -5px;
+      cursor: pointer;
     }
   }
 
@@ -158,29 +169,38 @@ export default {
       position: absolute;
       background: #ff3737;
       bottom: 0;
-      right: -30px;
+      right: -25px;
       width: 50px;
       height: 150px;
-      z-index: 0;
+      z-index: -1;
     }
   }
 
   .fighter-info {
     width: 100%;
     height: 100%;
+    display: flex;
+    padding-right: 25px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     transform: skewX(-10deg);
     z-index: 0;
     background: linear-gradient(
-      35deg,
+      25deg,
       rgba(251, 127, 109, 1) 0%,
       rgba(251, 127, 109, 1) 5%,
-      rgba(220, 63, 59, 1) 5%,
+      rgba(220, 63, 59, 1) 5.5%,
       rgba(220, 63, 59, 1) 10%,
-      rgba(180, 3, 3, 1) 10%,
-      rgba(180, 3, 3, 1) 40%,
-      rgba(255, 55, 55, 1) 40%,
+      rgba(180, 3, 3, 1) 10.5%,
+      rgba(180, 3, 3, 1) 30%,
+      rgba(255, 55, 55, 1) 30.5%,
       rgba(255, 55, 55, 1) 100%
     );
+
+    @media screen and (max-width: 425px) {
+      padding-right: 15px;
+    }
 
     &:before {
       content: '';
@@ -190,6 +210,56 @@ export default {
       width: 8px;
       height: 100%;
       background: rgba(#333, 0.3);
+    }
+
+    .fighter-name {
+      transform: skewX(10deg);
+      font-family: 'Roboto Condensed', sans-serif;
+      color: #e7e7e7;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.75rem;
+      line-height: 1em;
+      text-transform: capitalize;
+      text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
+        3px 3px 1px #111111, 4px 4px 1px #111111;
+      margin-bottom: 10px;
+
+      @media screen and (max-width: 425px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    .more-info {
+      transform: skewX(10deg);
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      padding: 2px 0px;
+      font-weight: 700;
+      background: #f9a09e;
+      border: 2px solid #111;
+      outline: none;
+      cursor: pointer;
+      width: 75%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+
+    .series-icon {
+      transform: skewX(10deg);
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      opacity: 0.8;
+
+      @media screen and (max-width: 425px) {
+        top: 5px;
+      }
     }
   }
 }
