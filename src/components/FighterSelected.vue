@@ -6,6 +6,7 @@
       <div class="character-portrait">
         <div class="selected-fighter">
           <img
+            v-if="fighter.id != null"
             :src="getSelectedFighterImage"
             @click="changeFighterAlt"
             title="Click to Change Alternate Costumes"
@@ -15,7 +16,9 @@
           <div class="fighter-info">
             <img class="series-icon" :src="getSeriesIcon" />
             <p class="fighter-name">{{ fighter.name }}</p>
-            <button class="more-info">View Bio</button>
+            <button v-if="fighter.id != null" class="more-info">
+              View Bio
+            </button>
           </div>
         </div>
       </div>
@@ -32,7 +35,18 @@ export default {
   props: {
     fighter: {
       type: Object,
-      required: true
+      required: false,
+      default: function() {
+        return {
+          alt: 0,
+          bio: null,
+          franchise: 'Default',
+          id: null,
+          isSelected: null,
+          name: 'Default',
+          videoID: null
+        }
+      }
     }
   },
   mixins: [parsedNameMixin],
@@ -68,7 +82,22 @@ export default {
   justify-content: center;
   width: 100vw;
   margin: 10px 0 0 0;
-  background: lightblue;
+  // padding: 28px 0;
+  background: linear-gradient(90deg, #462c97, #6ad3ed, white);
+  animation: gradientBG 10s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 .select-box {
@@ -78,18 +107,7 @@ export default {
   position: relative;
   border-bottom: 3px solid black;
   border-right: 3px solid black;
-
-  &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 50px solid transparent;
-    border-left: 50px solid lightblue;
-    z-index: 99;
-  }
+  clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 35px);
 
   &:after {
     position: absolute;
@@ -144,8 +162,13 @@ export default {
   .selected-fighter {
     flex-basis: 45%;
     z-index: 1;
+    height: 235px;
     position: relative;
     overflow: hidden;
+
+    @media screen and (max-width: 425px) {
+      max-height: 150px;
+    }
 
     img {
       object-fit: contain;

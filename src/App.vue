@@ -4,6 +4,7 @@
     <FighterGrid v-if="fightersLoaded" />
     <p class="loading-msg" v-else>Loading fighters...</p>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
+    <FighterSelected v-else />
   </div>
 </template>
 
