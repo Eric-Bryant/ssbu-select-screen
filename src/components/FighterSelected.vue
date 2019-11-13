@@ -82,7 +82,7 @@ export default {
   justify-content: center;
   width: 100vw;
   margin: 10px 0 0 0;
-  // padding: 28px 0;
+  padding: 11px 0;
   background: linear-gradient(90deg, #462c97, #6ad3ed, white);
   animation: gradientBG 10s ease infinite;
   background-size: 400% 400%;
@@ -102,7 +102,7 @@ export default {
 
 .select-box {
   margin: 10px;
-  width: 525px;
+  width: 600px;
   overflow: hidden;
   position: relative;
   border-bottom: 3px solid black;
@@ -162,21 +162,30 @@ export default {
   .selected-fighter {
     flex-basis: 45%;
     z-index: 1;
-    height: 235px;
+    height: 270px;
     position: relative;
-    overflow: hidden;
 
     @media screen and (max-width: 425px) {
-      max-height: 150px;
+      max-height: 200px;
+    }
+
+    @media screen and (max-width: 375px) {
+      max-height: 175px;
+    }
+
+    @media screen and (max-width: 350px) {
+      max-height: 145px;
     }
 
     img {
-      object-fit: contain;
-      max-height: 235px;
-      width: 100%;
-      height: 100%;
-      margin-bottom: -5px;
+      width: 110%;
+      max-width: 110%;
+      transform: translateY(0px);
       cursor: pointer;
+
+      @media screen and (max-width: 425px) {
+        transform: translateY(1px);
+      }
     }
   }
 
