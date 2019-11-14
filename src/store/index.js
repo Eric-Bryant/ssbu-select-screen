@@ -39,6 +39,7 @@ export default new Vuex.Store({
           fighter.isSelected = true
         } else {
           fighter.isSelected = false
+          fighter.alt = 0
         }
       })
     },
