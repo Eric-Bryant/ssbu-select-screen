@@ -5,16 +5,25 @@
       <div class="select-border-left"></div>
       <div class="character-portrait">
         <div class="selected-fighter">
-          <img
-            v-if="fighter.id != null"
-            :src="getSelectedFighterImage"
-            @click="changeFighterAlt"
-            title="Click to Change Alternate Costumes"
-          />
+          <transition name="slide-fade">
+            <img
+              v-if="fighter.id != null"
+              :src="getSelectedFighterImage"
+              :key="fighter.name"
+              @click="changeFighterAlt"
+              title="Click to Change Alternate Costumes"
+            />
+          </transition>
         </div>
         <div class="fighter-info-wrapper">
           <div class="fighter-info">
-            <img class="series-icon" :src="getSeriesIcon" />
+            <transition name="slide-fade-vertical">
+              <img
+                class="series-icon"
+                :src="getSeriesIcon"
+                :key="fighter.franchise"
+              />
+            </transition>
             <p class="fighter-name">{{ fighter.name }}</p>
             <button v-if="fighter.id != null" class="more-info">
               View Bio
@@ -43,7 +52,7 @@ export default {
           franchise: 'Default',
           id: null,
           isSelected: null,
-          name: 'Default',
+          name: '',
           videoID: null
         }
       }
@@ -180,11 +189,10 @@ export default {
     img {
       width: 110%;
       max-width: 110%;
-      transform: translateY(0px);
       cursor: pointer;
 
       @media screen and (max-width: 425px) {
-        transform: translateY(1px);
+        transform: translate(0px, 1px);
       }
     }
   }
@@ -294,5 +302,31 @@ export default {
       }
     }
   }
+}
+
+.slide-fade-enter-active {
+  transition: all 0.8s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translate(100px, 0px);
+}
+
+.slide-fade-vertical-enter-active {
+  transition: all 0.8s ease;
+}
+
+.slide-fade-vertical-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-vertical-enter,
+.slide-fade-vertical-leave-to {
+  transform: translate(0px, -100px) skewX(10deg) !important;
+  opacity: 0 !important;
 }
 </style>
