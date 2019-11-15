@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     fighters: [],
-    fightersLoaded: false
+    fightersLoaded: false,
+    bioOpen: false
   },
   getters: {
     getFighters: state => {
@@ -49,6 +50,9 @@ export default new Vuex.Store({
           character.alt = fighter.alt
         }
       })
+    },
+    SET_BIO_STATE: state => {
+      state.bioOpen = !state.bioOpen
     }
   },
   actions: {
@@ -60,6 +64,9 @@ export default new Vuex.Store({
     },
     setFighterAltState: (context, fighter) => {
       context.commit('SET_FIGHTER_ALT', fighter)
+    },
+    setBioOpenState: context => {
+      context.commit('SET_BIO_STATE')
     }
   },
   modules: {}

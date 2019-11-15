@@ -25,7 +25,11 @@
               />
             </transition>
             <p class="fighter-name">{{ fighter.name }}</p>
-            <button v-if="fighter.id != null" class="more-info">
+            <button
+              v-if="fighter.id != null"
+              class="more-info"
+              @click="openBio"
+            >
               View Bio
             </button>
           </div>
@@ -71,7 +75,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setFighterAltState']),
+    ...mapActions(['setFighterAltState', 'setBioOpenState']),
     changeFighterAlt() {
       if (this.fighter.alt < 7 && !this.parsedNameForAssets.includes('mii')) {
         this.fighter.alt++
@@ -80,6 +84,9 @@ export default {
         this.fighter.alt = 0
         this.setFighterAltState(this.fighter)
       }
+    },
+    openBio() {
+      this.setBioOpenState()
     }
   }
 }

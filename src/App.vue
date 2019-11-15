@@ -5,6 +5,7 @@
     <p class="loading-msg" v-else>Loading fighters...</p>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
     <FighterSelected v-else-if="fightersLoaded" />
+    <FighterBio v-show="bioOpen" :fighter="getSelectedFighter" />
   </div>
 </template>
 
@@ -12,14 +13,15 @@
 import Header from './components/Header'
 import FighterGrid from './components/FighterGrid'
 import FighterSelected from './components/FighterSelected'
+import FighterBio from './components/FighterBio'
 import { mapActions, mapState, mapGetters } from 'vuex'
 import axios from 'axios'
 
 export default {
   name: 'app',
-  components: { Header, FighterGrid, FighterSelected },
+  components: { Header, FighterGrid, FighterSelected, FighterBio },
   computed: {
-    ...mapState(['fightersLoaded']),
+    ...mapState(['fightersLoaded', 'bioOpen']),
     ...mapGetters(['getSelectedFighter'])
   },
   methods: {
