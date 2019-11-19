@@ -32,14 +32,14 @@ export default {
 
       if (this.fighter.isSelected) {
         this.setSelectedFighterState(this.fighter.name)
+
+        const announcer = new Audio(
+          '' + require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
+        )
+        announcer.play()
       } else {
         this.setSelectedFighterState('')
       }
-
-      const announcer = new Audio(
-        '' + require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
-      )
-      announcer.play()
     }
   }
 }
