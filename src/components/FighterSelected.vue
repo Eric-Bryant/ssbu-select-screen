@@ -41,7 +41,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import parsedNameMixin from '../mixins/parsedNameMixin'
+import fighterAssets from '../mixins/fighterAssets'
 
 export default {
   name: 'FighterSelected',
@@ -62,17 +62,9 @@ export default {
       }
     }
   },
-  mixins: [parsedNameMixin],
+  mixins: [fighterAssets],
   data() {
     return {}
-  },
-  computed: {
-    getSelectedFighterImage() {
-      return require(`../assets/characters/${this.parsedNameForAssets}/selected${this.fighter.alt}-min.png`)
-    },
-    getSeriesIcon() {
-      return require(`../assets/series-icons/${this.parsedFranchiseForAssets}.png`)
-    }
   },
   methods: {
     ...mapActions(['setFighterAltState', 'setBioOpenState']),
@@ -199,7 +191,7 @@ export default {
       cursor: pointer;
 
       @media screen and (max-width: 425px) {
-        transform: translate(0px, 1px);
+        transform: translate(0px, 10px);
       }
     }
   }

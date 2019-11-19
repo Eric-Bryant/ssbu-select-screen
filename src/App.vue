@@ -5,7 +5,7 @@
     <p class="loading-msg" v-else>Loading fighters...</p>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
     <FighterSelected v-else-if="fightersLoaded" />
-    <FighterBio v-show="bioOpen" :fighter="getSelectedFighter" />
+    <FighterBio v-if="bioOpen" :fighter="getSelectedFighter" />
   </div>
 </template>
 

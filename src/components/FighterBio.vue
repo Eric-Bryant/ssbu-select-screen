@@ -1,20 +1,34 @@
 <template>
-  <div class="modal">
-    <p @click="closeBio">{{ fighter.name }}</p>
+  <div class="modal" @click.self="closeBio">
+    <div class="modal-box">
+      <div class="fighter-profile">
+        <img :src="getFranchiseLogo" class="franchise-logo" />"
+        <img :src="getSelectedFighterImage" class="fighter-image" />
+        <p class="fighter-name">{{ fighter.name }}</p>
+      </div>
+      <div class="fighter-bio">
+        <p>{{ fighter.bio }}</p>
+        <FighterVideo :videoID="fighter.videoID" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import fighterAssets from '../mixins/fighterAssets'
+import FighterVideo from '../components/FighterVideo'
 
 export default {
   name: 'FigherBio',
+  components: { FighterVideo },
   props: {
     fighter: {
       type: Object,
       required: false
     }
   },
+  mixins: [fighterAssets],
   methods: {
     ...mapActions(['setBioOpenState']),
     closeBio() {
@@ -26,20 +40,101 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.7);
   z-index: 100;
+  overflow-y: scroll;
 
-  p {
-    color: white;
-    font-size: 2rem;
+  .modal-box {
+    position: absolute;
+    width: 960px;
+    max-width: 100%;
+    background: #111;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 20px;
+
+    @media screen and (max-width: 769px) {
+      max-width: 90%;
+      grid-template-columns: 100%;
+      top: 0px;
+    }
+
+    .fighter-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+
+      @media screen and (max-width: 600px) {
+        padding: 20px 20px 0px 20px;
+      }
+
+      .fighter-name {
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #e7e7e7;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 2.5rem;
+        line-height: 1.25em;
+        text-transform: capitalize;
+        text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111,
+          2px 2px 1px #111111, 3px 3px 1px #111111, 4px 4px 1px #111111;
+        text-align: center;
+        margin: 20px 0px 0px 0px;
+      }
+
+      img.fighter-image {
+        border-radius: 50%;
+        border: 2px dashed white;
+        object-fit: cover;
+        object-position: 0% 0%;
+        height: 350px;
+        width: 350px;
+
+        @media screen and (max-width: 769px) {
+          width: 450px;
+          height: 450px;
+        }
+
+        @media screen and (max-width: 425px) {
+          width: 225px;
+          height: 225px;
+        }
+      }
+    }
+
+    .fighter-bio {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      justify-content: center;
+
+      p {
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #e7e7e7;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+        line-height: 1.25em;
+        text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111,
+          2px 2px 1px #111111, 3px 3px 1px #111111;
+        margin: 0px 0px 20px 0px;
+      }
+
+      iframe {
+        max-width: 100%;
+      }
+    }
   }
 }
 </style>

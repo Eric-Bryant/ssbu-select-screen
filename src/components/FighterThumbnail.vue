@@ -11,7 +11,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import parsedNameMixin from '../mixins/parsedNameMixin'
+import fighterAssets from '../mixins/fighterAssets'
 
 export default {
   name: 'FighterThumbnail',
@@ -21,14 +21,9 @@ export default {
       required: true
     }
   },
-  mixins: [parsedNameMixin],
+  mixins: [fighterAssets],
   data() {
     return {}
-  },
-  computed: {
-    getThumbnailURL() {
-      return require(`../assets/thumbnails/${this.parsedNameForAssets}-min.png`)
-    }
   },
   methods: {
     ...mapActions(['setSelectedFighterState']),
