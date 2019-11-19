@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     fighters: [],
     fightersLoaded: false,
-    bioOpen: false
+    bioOpen: false,
+    sortType: 'Default'
   },
   getters: {
     getFighters: state => {
@@ -53,6 +54,9 @@ export default new Vuex.Store({
     },
     SET_BIO_STATE: state => {
       state.bioOpen = !state.bioOpen
+    },
+    SET_SORT_TYPE_STATE: (state, sortType) => {
+      state.sortType = sortType
     }
   },
   actions: {
@@ -67,6 +71,9 @@ export default new Vuex.Store({
     },
     setBioOpenState: context => {
       context.commit('SET_BIO_STATE')
+    },
+    setSortTypeState: (context, sortType) => {
+      context.commit('SET_SORT_TYPE_STATE', sortType)
     }
   },
   modules: {}

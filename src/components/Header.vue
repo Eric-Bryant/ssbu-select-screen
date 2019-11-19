@@ -1,12 +1,12 @@
 <template>
   <header class="options">
-    <button class="btn">
+    <button class="btn" @click="setSortType('Default')">
       <span>Default Order</span>
     </button>
-    <button class="btn">
+    <button class="btn" @click="setSortType('ID')">
       <span>Sort By Number</span>
     </button>
-    <button class="btn">
+    <button class="btn" @click="setSortType('Name')">
       <span>Sort By Name</span>
     </button>
     <button class="btn">
@@ -19,7 +19,17 @@
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+
+export default {
+  name: 'Header',
+  methods: {
+    ...mapActions(['setSortTypeState']),
+    setSortType(sortType) {
+      this.setSortTypeState(sortType)
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

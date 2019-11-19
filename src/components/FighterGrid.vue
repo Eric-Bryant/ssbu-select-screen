@@ -1,7 +1,21 @@
 <template>
-  <div class="menu-wrapper">
+  <div class="menu-wrapper" v-if="sortType === 'Default'">
     <FighterThumbnail
       v-for="fighter in getFighters"
+      :key="fighter.id"
+      :fighter="fighter"
+    />
+  </div>
+  <div class="menu-wrapper" v-else-if="sortType === 'ID'">
+    <FighterThumbnail
+      v-for="fighter in orderByID"
+      :key="fighter.id"
+      :fighter="fighter"
+    />
+  </div>
+  <div class="menu-wrapper" v-else-if="sortType === 'Name'">
+    <FighterThumbnail
+      v-for="fighter in orderByName"
       :key="fighter.id"
       :fighter="fighter"
     />
@@ -10,7 +24,7 @@
 
 <script>
 import FighterThumbnail from './FighterThumbnail'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'FighterGrid',
@@ -20,6 +34,7 @@ export default {
   },
   computed: {
     ...mapGetters(['getFighters']),
+    ...mapState(['sortType']),
     orderByID() {
       return [...this.getFighters].sort((a, b) => {
         return a.id - b.id
@@ -52,12 +67,11 @@ export default {
 
 <style lang="scss" scoped>
 .menu-wrapper {
-  margin: 0px auto 0;
+  margin: 0 auto;
   width: 85vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 </style>

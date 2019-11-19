@@ -34,7 +34,7 @@ export default {
         this.setSelectedFighterState(this.fighter.name)
 
         const announcer = new Audio(
-          '' + require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
+          require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
         )
         announcer.play()
       } else {
