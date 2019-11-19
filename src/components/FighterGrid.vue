@@ -1,8 +1,8 @@
 <template>
   <div class="menu-wrapper">
     <FighterThumbnail
-      v-for="(fighter, index) in getFighters"
-      :key="index"
+      v-for="fighter in getFighters"
+      :key="fighter.id"
       :fighter="fighter"
     />
   </div>
@@ -19,7 +19,12 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters(['getFighters'])
+    ...mapGetters(['getFighters']),
+    orderByID() {
+      return [...this.getFighters].sort((a, b) => {
+        return a.id - b.id
+      })
+    }
   }
 }
 </script>
