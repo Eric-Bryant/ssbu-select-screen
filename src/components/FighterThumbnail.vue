@@ -35,6 +35,11 @@ export default {
       } else {
         this.setSelectedFighterState('')
       }
+
+      const announcer = new Audio(
+        '' + require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
+      )
+      announcer.play()
     }
   }
 }
