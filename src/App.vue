@@ -5,7 +5,9 @@
     <p class="loading-msg" v-else>Loading fighters...</p>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
     <FighterSelected v-else-if="fightersLoaded" />
-    <FighterBio v-if="bioOpen" :fighter="getSelectedFighter" />
+    <transition name="fade-scale">
+      <FighterBio v-if="bioOpen" :fighter="getSelectedFighter" />
+    </transition>
   </div>
 </template>
 
@@ -70,5 +72,16 @@ img {
   text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
     3px 3px 1px #111111;
   text-align: center;
+}
+
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.fade-scale-enter,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: translate(100vw, -100vh) scale(0);
 }
 </style>
