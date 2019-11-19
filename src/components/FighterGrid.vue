@@ -24,6 +24,27 @@ export default {
       return [...this.getFighters].sort((a, b) => {
         return a.id - b.id
       })
+    },
+    orderByName() {
+      return [...this.getFighters].sort((a, b) => {
+        let textA = a.name.toUpperCase()
+        let textB = b.name.toUpperCase()
+
+        if (textA < textB) {
+          return -1
+        } else if (textA > textB) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+    }
+  },
+  methods: {
+    showFranchiseOnly(franchise) {
+      return this.getFighters.filter(fighter => {
+        return fighter.franchise == franchise
+      })
     }
   }
 }
