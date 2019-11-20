@@ -1,25 +1,27 @@
 <template>
-  <div class="menu-wrapper" v-if="sortType === 'Default'">
-    <FighterThumbnail
-      v-for="fighter in getFighters"
-      :key="fighter.id"
-      :fighter="fighter"
-    />
-  </div>
-  <div class="menu-wrapper" v-else-if="sortType === 'ID'">
-    <FighterThumbnail
-      v-for="fighter in orderByID"
-      :key="fighter.id"
-      :fighter="fighter"
-    />
-  </div>
-  <div class="menu-wrapper" v-else-if="sortType === 'Name'">
-    <FighterThumbnail
-      v-for="fighter in orderByName"
-      :key="fighter.id"
-      :fighter="fighter"
-    />
-  </div>
+  <transition name="fade-scale" mode="out-in">
+    <div class="menu-wrapper" v-if="sortType === 'Default'" :key="'Default'">
+      <FighterThumbnail
+        v-for="fighter in getFighters"
+        :key="fighter.id"
+        :fighter="fighter"
+      />
+    </div>
+    <div class="menu-wrapper" v-else-if="sortType === 'ID'" :key="'ID'">
+      <FighterThumbnail
+        v-for="fighter in orderByID"
+        :key="fighter.id"
+        :fighter="fighter"
+      />
+    </div>
+    <div class="menu-wrapper" v-else-if="sortType === 'Name'" :key="'Name'">
+      <FighterThumbnail
+        v-for="fighter in orderByName"
+        :key="fighter.id"
+        :fighter="fighter"
+      />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -73,5 +75,16 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
+}
+
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-scale-enter,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0);
 }
 </style>
