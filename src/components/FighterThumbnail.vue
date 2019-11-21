@@ -1,10 +1,7 @@
 <template>
   <div
     class="fighter-thumbnail"
-    :class="[
-      { 'fighter-thumbnail--selected': fighter.isSelected },
-      parsedNameForAssets
-    ]"
+    :class="{ 'fighter-thumbnail--selected': fighter.isSelected }"
     @click="selectFighter"
   >
     <img :src="getThumbnailURL" class="fighter-thumbnail__image" />
@@ -93,7 +90,6 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background: blue;
   }
 
   &__name {
@@ -115,6 +111,36 @@ export default {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+@for $i from 1 through 79 {
+  .fighter-thumbnail:nth-child(#{$i}) .fighter-thumbnail__image {
+    background: linear-gradient(to bottom right, #37c4ef, #e9c531);
+    background-size: 400% 400%;
+    background-position: 0% 0%;
+    animation: animateFighterThumbnail 8s infinite alternate;
+    @if ($i >= 1 and $i <= 9) {
+    } @else if ($i >= 13 and $i <= 20) {
+    } @else if ($i >= 25 and $i <= 31) {
+    } @else if ($i >= 37 and $i <= 42) {
+    } @else if ($i >= 49 and $i <= 53) {
+    } @else if ($i >= 61 and $i <= 64) {
+    } @else {
+      background-position: 100% 100%;
+      animation-delay: 4s;
+      animation-direction: alternate-reverse;
+    }
+  }
+}
+
+@keyframes animateFighterThumbnail {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 100% 100%;
   }
 }
 </style>

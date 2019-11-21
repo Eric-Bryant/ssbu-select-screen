@@ -21,6 +21,17 @@
         :fighter="fighter"
       />
     </div>
+    <div
+      class="fighter-grid"
+      v-else-if="sortType === 'Franchise'"
+      :key="'Franchise'"
+    >
+      <FighterThumbnail
+        v-for="fighter in orderByFranchise"
+        :key="fighter.id"
+        :fighter="fighter"
+      />
+    </div>
   </transition>
 </template>
 
@@ -46,6 +57,20 @@ export default {
       return [...this.getFighters].sort((a, b) => {
         let textA = a.name.toUpperCase()
         let textB = b.name.toUpperCase()
+
+        if (textA < textB) {
+          return -1
+        } else if (textA > textB) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+    },
+    orderByFranchise() {
+      return [...this.getFighters].sort((a, b) => {
+        let textA = a.franchise.toUpperCase()
+        let textB = b.franchise.toUpperCase()
 
         if (textA < textB) {
           return -1

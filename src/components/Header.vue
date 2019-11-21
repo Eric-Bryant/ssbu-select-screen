@@ -9,7 +9,7 @@
     <button class="header__btn" @click="setSortType('Name')">
       <span>Sort By Name</span>
     </button>
-    <button class="header__btn">
+    <button class="header__btn" @click="setSortType('Franchise')">
       <span>Sort By Franchise</span>
     </button>
     <button class="header__btn">
