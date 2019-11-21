@@ -6,6 +6,7 @@
     frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope;"
     allowfullscreen
+    class="fighter-video"
   ></iframe>
 </template>
 
@@ -21,4 +22,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.fighter-video {
+  max-width: 100%;
+}
+</style>

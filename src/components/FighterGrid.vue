@@ -1,20 +1,20 @@
 <template>
   <transition name="fade-scale" mode="out-in">
-    <div class="menu-wrapper" v-if="sortType === 'Default'" :key="'Default'">
+    <div class="fighter-grid" v-if="sortType === 'Default'" :key="'Default'">
       <FighterThumbnail
         v-for="fighter in getFighters"
         :key="fighter.id"
         :fighter="fighter"
       />
     </div>
-    <div class="menu-wrapper" v-else-if="sortType === 'ID'" :key="'ID'">
+    <div class="fighter-grid" v-else-if="sortType === 'ID'" :key="'ID'">
       <FighterThumbnail
         v-for="fighter in orderByID"
         :key="fighter.id"
         :fighter="fighter"
       />
     </div>
-    <div class="menu-wrapper" v-else-if="sortType === 'Name'" :key="'Name'">
+    <div class="fighter-grid" v-else-if="sortType === 'Name'" :key="'Name'">
       <FighterThumbnail
         v-for="fighter in orderByName"
         :key="fighter.id"
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.menu-wrapper {
+.fighter-grid {
   margin: 0 auto;
   width: 85vw;
   display: flex;

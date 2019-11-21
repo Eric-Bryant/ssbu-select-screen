@@ -1,11 +1,14 @@
 <template>
   <div
-    class="fighter"
-    :class="[{ selected: fighter.isSelected }, parsedNameForAssets]"
+    class="fighter-thumbnail"
+    :class="[
+      { 'fighter-thumbnail--selected': fighter.isSelected },
+      parsedNameForAssets
+    ]"
     @click="selectFighter"
   >
-    <img :src="getThumbnailURL" alt />
-    <p>{{ fighter.name }}</p>
+    <img :src="getThumbnailURL" class="fighter-thumbnail__image" />
+    <p class="fighter-thumbnail__name">{{ fighter.name }}</p>
   </div>
 </template>
 
@@ -46,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fighter {
+.fighter-thumbnail {
   position: relative;
   flex-basis: 125px;
   height: 84px;
@@ -56,7 +59,7 @@ export default {
     cursor: pointer;
   }
 
-  &.selected {
+  &--selected {
     border: 5px solid #b3acb2;
 
     &::before {
@@ -86,14 +89,14 @@ export default {
     }
   }
 
-  img {
+  &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     background: blue;
   }
 
-  p {
+  &__name {
     position: absolute;
     width: 100%;
     bottom: 0;

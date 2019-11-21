@@ -1,9 +1,9 @@
 <template>
-  <div class="character-selection">
-    <div class="select-box">
-      <div class="select-border-top"></div>
-      <div class="select-border-left"></div>
-      <div class="character-portrait">
+  <div class="fighter-selection">
+    <div class="fighter-selection-box">
+      <div class="fighter-selection-box__border-top"></div>
+      <div class="fighter-selection-box__border-left"></div>
+      <div class="fighter-portrait">
         <div class="selected-fighter">
           <transition name="slide-fade">
             <img
@@ -12,6 +12,7 @@
               :key="fighter.name"
               @click="changeFighterAlt"
               title="Click to Change Alternate Costumes"
+              class="selected-fighter__image"
             />
           </transition>
         </div>
@@ -19,15 +20,15 @@
           <div class="fighter-info">
             <transition name="slide-fade-vertical">
               <img
-                class="series-icon"
+                class="fighter-info__series-icon"
                 :src="getSeriesIcon"
                 :key="fighter.franchise"
               />
             </transition>
-            <p class="fighter-name">{{ fighter.name }}</p>
+            <p class="fighter-info__name">{{ fighter.name }}</p>
             <button
               v-if="fighter.id != null"
-              class="more-info"
+              class="fighter-info__btn"
               @click="openBio"
             >
               View Bio
@@ -85,7 +86,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.character-selection {
+.fighter-selection {
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -108,7 +109,7 @@ export default {
   }
 }
 
-.select-box {
+.fighter-selection-box {
   margin: 10px;
   width: 600px;
   overflow: hidden;
@@ -128,29 +129,29 @@ export default {
     background: black;
     transform: rotate(-45deg);
   }
+
+  &__border-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: black;
+    z-index: 5;
+  }
+
+  &__border-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: black;
+    z-index: 5;
+  }
 }
 
-.select-border-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: black;
-  z-index: 5;
-}
-
-.select-border-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: black;
-  z-index: 5;
-}
-
-.character-portrait {
+.fighter-portrait {
   padding: 0px;
   width: 100%;
   height: auto;
@@ -166,139 +167,139 @@ export default {
     rgba(184, 181, 210, 1) 45.5%
   );
   transition: opacity 0.3s ease;
+}
 
-  .selected-fighter {
-    flex-basis: 45%;
-    z-index: 1;
-    height: 270px;
-    position: relative;
+.selected-fighter {
+  flex-basis: 45%;
+  z-index: 1;
+  height: 270px;
+  position: relative;
+
+  @media screen and (max-width: 425px) {
+    max-height: 200px;
+  }
+
+  @media screen and (max-width: 375px) {
+    max-height: 175px;
+  }
+
+  @media screen and (max-width: 350px) {
+    max-height: 145px;
+  }
+
+  &__image {
+    width: 110%;
+    max-width: 110%;
+    cursor: pointer;
 
     @media screen and (max-width: 425px) {
-      max-height: 200px;
-    }
-
-    @media screen and (max-width: 375px) {
-      max-height: 175px;
-    }
-
-    @media screen and (max-width: 350px) {
-      max-height: 145px;
-    }
-
-    img {
-      width: 110%;
-      max-width: 110%;
-      cursor: pointer;
-
-      @media screen and (max-width: 425px) {
-        transform: translate(0px, 10px);
-      }
+      transform: translate(0px, 10px);
     }
   }
+}
 
-  .fighter-info-wrapper {
-    flex-basis: 55%;
-    width: 100%;
-    margin-top: -10px;
-    position: relative;
-    z-index: 2;
+.fighter-info-wrapper {
+  flex-basis: 55%;
+  width: 100%;
+  margin-top: -10px;
+  position: relative;
+  z-index: 2;
 
-    &:after {
-      content: '';
-      position: absolute;
-      background: #ff3737;
-      bottom: 0;
-      right: -25px;
-      width: 50px;
-      height: 150px;
-      z-index: -1;
-    }
+  &:after {
+    content: '';
+    position: absolute;
+    background: #ff3737;
+    bottom: 0;
+    right: -25px;
+    width: 50px;
+    height: 150px;
+    z-index: -1;
+  }
+}
+
+.fighter-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-right: 25px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  transform: skewX(-10deg);
+  z-index: 0;
+  background: linear-gradient(
+    25deg,
+    rgba(251, 127, 109, 1) 0%,
+    rgba(251, 127, 109, 1) 5%,
+    rgba(220, 63, 59, 1) 5.5%,
+    rgba(220, 63, 59, 1) 10%,
+    rgba(180, 3, 3, 1) 10.5%,
+    rgba(180, 3, 3, 1) 30%,
+    rgba(255, 55, 55, 1) 30.5%,
+    rgba(255, 55, 55, 1) 100%
+  );
+
+  @media screen and (max-width: 425px) {
+    padding-right: 15px;
   }
 
-  .fighter-info {
-    width: 100%;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 8px;
     height: 100%;
-    display: flex;
-    padding-right: 25px;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    transform: skewX(-10deg);
-    z-index: 0;
-    background: linear-gradient(
-      25deg,
-      rgba(251, 127, 109, 1) 0%,
-      rgba(251, 127, 109, 1) 5%,
-      rgba(220, 63, 59, 1) 5.5%,
-      rgba(220, 63, 59, 1) 10%,
-      rgba(180, 3, 3, 1) 10.5%,
-      rgba(180, 3, 3, 1) 30%,
-      rgba(255, 55, 55, 1) 30.5%,
-      rgba(255, 55, 55, 1) 100%
-    );
+    background: rgba(#333, 0.3);
+  }
+
+  &__series-icon {
+    transform: skewX(10deg);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    opacity: 0.8;
 
     @media screen and (max-width: 425px) {
-      padding-right: 15px;
+      top: 5px;
     }
+  }
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 0;
-      width: 8px;
-      height: 100%;
-      background: rgba(#333, 0.3);
+  &__name {
+    transform: skewX(10deg);
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #e7e7e7;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.75rem;
+    line-height: 1em;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
+      3px 3px 1px #111111, 4px 4px 1px #111111;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 425px) {
+      font-size: 1.25rem;
     }
+  }
 
-    .fighter-name {
-      transform: skewX(10deg);
-      font-family: 'Roboto Condensed', sans-serif;
-      color: #e7e7e7;
-      font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 1.75rem;
-      line-height: 1em;
-      text-transform: capitalize;
-      text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
-        3px 3px 1px #111111, 4px 4px 1px #111111;
-      margin-bottom: 10px;
+  &__btn {
+    transform: skewX(10deg);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    padding: 2px 0px;
+    font-weight: 700;
+    background: #f9a09e;
+    border: 2px solid #111;
+    outline: none;
+    cursor: pointer;
+    width: 75%;
+    transition: all 0.3s ease;
 
-      @media screen and (max-width: 425px) {
-        font-size: 1.25rem;
-      }
-    }
-
-    .more-info {
-      transform: skewX(10deg);
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.5px;
-      padding: 2px 0px;
-      font-weight: 700;
-      background: #f9a09e;
-      border: 2px solid #111;
-      outline: none;
-      cursor: pointer;
-      width: 75%;
-      transition: all 0.3s ease;
-
-      &:hover {
-        opacity: 0.75;
-      }
-    }
-
-    .series-icon {
-      transform: skewX(10deg);
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      opacity: 0.8;
-
-      @media screen and (max-width: 425px) {
-        top: 5px;
-      }
+    &:hover {
+      opacity: 0.75;
     }
   }
 }

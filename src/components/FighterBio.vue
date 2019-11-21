@@ -2,12 +2,12 @@
   <div class="modal" @click.self="closeBio">
     <div class="modal-box">
       <div class="fighter-profile">
-        <img :src="getFranchiseLogo" class="franchise-logo" />"
-        <img :src="getSelectedFighterImage" class="fighter-image" />
-        <p class="fighter-name">{{ fighter.name }}</p>
+        <img :src="getFranchiseLogo" class="fighter-profile__logo" />"
+        <img :src="getSelectedFighterImage" class="fighter-profile__image" />
+        <p class="fighter-profile__name">{{ fighter.name }}</p>
       </div>
-      <div class="fighter-bio">
-        <p>{{ fighter.bio }}</p>
+      <div class="fighter-description">
+        <p class="fighter-description__bio">{{ fighter.bio }}</p>
         <FighterVideo :videoID="fighter.videoID" />
       </div>
     </div>
@@ -51,90 +51,86 @@ export default {
   background: rgba(0, 0, 0, 0.7);
   z-index: 100;
   overflow-y: scroll;
+}
 
-  .modal-box {
-    position: absolute;
-    width: 960px;
-    max-width: 100%;
-    background: #111;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 20px;
+.modal-box {
+  position: absolute;
+  width: 960px;
+  max-width: 100%;
+  background: #111;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px;
+
+  @media screen and (max-width: 769px) {
+    max-width: 90%;
+    grid-template-columns: 100%;
+    top: 0px;
+  }
+}
+
+.fighter-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  @media screen and (max-width: 600px) {
+    padding: 20px 20px 0px 20px;
+  }
+
+  &__name {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #e7e7e7;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    line-height: 1.25em;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
+      3px 3px 1px #111111, 4px 4px 1px #111111;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+  }
+
+  &__image {
+    border-radius: 50%;
+    border: 2px dashed white;
+    object-fit: cover;
+    object-position: 0% 0%;
+    height: 350px;
+    width: 350px;
 
     @media screen and (max-width: 769px) {
-      max-width: 90%;
-      grid-template-columns: 100%;
-      top: 0px;
+      width: 450px;
+      height: 450px;
     }
 
-    .fighter-profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-
-      @media screen and (max-width: 600px) {
-        padding: 20px 20px 0px 20px;
-      }
-
-      .fighter-name {
-        font-family: 'Roboto Condensed', sans-serif;
-        color: #e7e7e7;
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-size: 2.5rem;
-        line-height: 1.25em;
-        text-transform: capitalize;
-        text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111,
-          2px 2px 1px #111111, 3px 3px 1px #111111, 4px 4px 1px #111111;
-        text-align: center;
-        margin: 20px 0px 0px 0px;
-      }
-
-      img.fighter-image {
-        border-radius: 50%;
-        border: 2px dashed white;
-        object-fit: cover;
-        object-position: 0% 0%;
-        height: 350px;
-        width: 350px;
-
-        @media screen and (max-width: 769px) {
-          width: 450px;
-          height: 450px;
-        }
-
-        @media screen and (max-width: 425px) {
-          width: 225px;
-          height: 225px;
-        }
-      }
+    @media screen and (max-width: 425px) {
+      width: 225px;
+      height: 225px;
     }
+  }
+}
 
-    .fighter-bio {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      justify-content: center;
+.fighter-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
 
-      p {
-        font-family: 'Roboto Condensed', sans-serif;
-        color: #e7e7e7;
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-size: 1.25rem;
-        line-height: 1.25em;
-        text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111,
-          2px 2px 1px #111111, 3px 3px 1px #111111;
-        margin: 0px 0px 20px 0px;
-      }
-
-      iframe {
-        max-width: 100%;
-      }
-    }
+  &__bio {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #e7e7e7;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    line-height: 1.25em;
+    text-shadow: 0px 0px 1px #111111, 1px 1px 1px #111111, 2px 2px 1px #111111,
+      3px 3px 1px #111111;
+    margin: 0px 0px 20px 0px;
   }
 }
 </style>
