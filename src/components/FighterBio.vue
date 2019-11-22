@@ -112,6 +112,10 @@ export default {
       height: 225px;
     }
   }
+
+  &__logo {
+    max-height: 150px;
+  }
 }
 
 .fighter-description {

@@ -92,21 +92,7 @@ export default {
   width: 100vw;
   margin: 10px 0 0 0;
   padding: 11px 0;
-  background: linear-gradient(90deg, #462c97, #6ad3ed, white);
-  animation: gradientBG 10s ease infinite;
-  background-size: 400% 400%;
-}
-
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 50% 50%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+  background: linear-gradient(90deg, #462c97, #462c97, #6ad3ed, #6ad3ed, white);
 }
 
 .fighter-selection-box {
