@@ -82,6 +82,6 @@ img {
 .fade-scale-enter,
 .fade-scale-leave-to {
   opacity: 0;
-  transform: translate(100vw, -100vh) scale(0);
+  transform: scale(0);
 }
 </style>
