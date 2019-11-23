@@ -136,6 +136,7 @@ export default {
     width: calc(100% - 10px);
     text-align: center;
     color: #111;
+    transition: all 0.3s ease;
     clip-path: polygon(
       3.5% 0%,
       96.5% 0%,
@@ -144,6 +145,10 @@ export default {
       3.5% 100%,
       0% 50%
     );
+
+    &:hover {
+      background: rgba(172, 1, 2, 1);
+    }
   }
 }
 </style>
