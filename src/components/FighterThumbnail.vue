@@ -53,6 +53,11 @@ export default {
   height: 84px;
   margin: 2.5px;
 
+  @media screen and (max-width: 600px) {
+    flex-basis: 100px;
+    height: 74px;
+  }
+
   &:hover {
     cursor: pointer;
   }

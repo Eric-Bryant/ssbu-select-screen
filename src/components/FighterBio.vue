@@ -1,6 +1,7 @@
 <template>
   <div class="modal" @click.self="closeBio">
     <div class="modal-box">
+      <div class="modal-box__close-btn" @click="closeBio">X</div>
       <div class="fighter-profile">
         <img :src="getFranchiseLogo" class="fighter-profile__logo" />"
         <img :src="getSelectedFighterImage" class="fighter-profile__image" />
@@ -63,9 +64,24 @@ export default {
   padding: 20px;
 
   @media screen and (max-width: 769px) {
-    max-width: 90%;
     grid-template-columns: 100%;
     top: 0px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background: #e7e7e7;
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(#e7e7e7, 0.8);
+    }
   }
 }
 

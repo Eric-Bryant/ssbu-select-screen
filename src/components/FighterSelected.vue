@@ -15,6 +15,9 @@
               class="selected-fighter__image"
             />
           </transition>
+          <div class="alt-options">
+            <img :src="getSeriesIcon" />
+          </div>
         </div>
         <div class="fighter-info-wrapper">
           <div class="fighter-info">
@@ -182,6 +185,17 @@ export default {
       transform: translate(0px, 10px);
     }
   }
+}
+
+.alt-options {
+  position: absolute;
+  top: 0;
+  width: 110%;
+  height: 100%;
+  background: rgba(#111, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .fighter-info-wrapper {

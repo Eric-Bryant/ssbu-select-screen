@@ -100,6 +100,10 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
+
+  @media screen and (max-width: 769px) {
+    width: 100vw;
+  }
 }
 
 .fade-scale-enter-active,
