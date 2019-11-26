@@ -36,6 +36,7 @@ export default {
         const announcer = new Audio(
           require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
         )
+
         announcer.play()
       } else {
         this.setSelectedFighterState('')

@@ -110,6 +110,7 @@ export default {
 }
 
 .sort-dropdown {
+  position: relative;
   margin: 2.5px 0px 0px 20px;
   font-family: 'Roboto Condensed', sans-serif;
   cursor: pointer;
@@ -147,7 +148,7 @@ export default {
     );
 
     &:hover {
-      background: rgba(172, 1, 2, 1);
+      opacity: 0.8;
     }
   }
 }
