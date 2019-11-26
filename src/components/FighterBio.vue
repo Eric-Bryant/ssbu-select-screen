@@ -52,6 +52,10 @@ export default {
   background: rgba(0, 0, 0, 0.7);
   z-index: 100;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .modal-box {
