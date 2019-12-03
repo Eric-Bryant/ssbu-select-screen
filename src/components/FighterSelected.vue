@@ -10,13 +10,21 @@
               v-if="fighter.id != null"
               :src="getSelectedFighterImage"
               :key="fighter.name"
-              @click="changeFighterAlt"
-              title="Click to Change Alternate Costumes"
+              @click="showAltOptions"
+              :class="parsedNameForAssets"
               class="selected-fighter__image"
             />
           </transition>
-          <div class="alt-options">
-            <img :src="getSeriesIcon" />
+          <div class="alt-options" v-if="altOptionsShowing">
+            <div
+              class="alt-options__close-btn"
+              @click="altOptionsShowing = !altOptionsShowing"
+            >
+              X
+            </div>
+            <div class="alt-icons">
+              <img :src="getSeriesIcon" @click="changeFighterAltSpecific(3)" />
+            </div>
           </div>
         </div>
         <div class="fighter-info-wrapper">
@@ -68,7 +76,9 @@ export default {
   },
   mixins: [fighterAssets],
   data() {
-    return {}
+    return {
+      altOptionsShowing: false
+    }
   },
   methods: {
     ...mapActions(['setFighterAltState', 'setBioOpenState']),
@@ -79,6 +89,18 @@ export default {
       } else if (this.fighter.alt == 7) {
         this.fighter.alt = 0
         this.setFighterAltState(this.fighter)
+      }
+    },
+    changeFighterAltSpecific(altNumber) {
+      if (!this.parsedNameForAssets.includes('mii')) {
+        this.fighter.alt = altNumber
+        this.setFighterAltState(this.fighter)
+        this.altOptionsShowing = !this.altOptionsShowing
+      }
+    },
+    showAltOptions() {
+      if (!this.parsedNameForAssets.includes('mii')) {
+        this.altOptionsShowing = !this.altOptionsShowing
       }
     },
     openBio() {
@@ -185,6 +207,12 @@ export default {
       transform: translate(0px, 10px);
     }
   }
+
+  .mii-brawler,
+  .mii-swordfighter,
+  .mii-gunner {
+    cursor: initial;
+  }
 }
 
 .alt-options {
@@ -193,9 +221,30 @@ export default {
   width: 110%;
   height: 100%;
   background: rgba(#111, 0.8);
-  display: none;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &__close-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    padding: 5px 15px;
+    background: #e7e7e7;
+    font-size: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    @media screen and (max-width: 600px) {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+    }
+  }
+}
+
+.alt-icons {
+  display: flex;
+  justify-content: center;
 }
 
 .fighter-info-wrapper {

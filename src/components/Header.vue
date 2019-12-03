@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__background"></div>
     <div class="options">
-      <div class="options__joycon">
+      <div class="options__home">
         <svg viewBox="0 0 78 78">
           <path
             d="M73.89 33.51Q57.167 20.1 40.45 6.67a2.341 2.341 0 0 0-1.455-.634 2.3 2.3 0 0 0-1.445.634Q20.828 20.085 4.108 33.51c-2 1.628-1.166 3.734 1.469 3.734h4.3c1.594 0 2.255.613 2.255 2.116v27.492c0 1.47.652 2.1 2.239 2.1h49.25c1.6 0 2.25-.634 2.25-2.1V39.36c0-1.5.653-2.116 2.248-2.116h4.306c2.646 0 3.459-2.106 1.465-3.734zm-23.7 20.633c0 1.492-.653 2.115-2.236 2.115H30.045c-1.576 0-2.244-.623-2.244-2.115V41.471c0-1.508.668-2.111 2.244-2.111h17.909c1.513 0 2.174.57 2.236 2.008z"
@@ -17,8 +17,8 @@
         </svg>
       </div>
     </div>
-    <div class="sort-dropdown">
-      <div class="sort-dropdown__label">Solo Battle</div>
+    <div class="solo-battle">
+      <div class="solo-battle__label">Solo Battle</div>
     </div>
   </header>
 </template>
@@ -73,7 +73,7 @@ export default {
   background: #870002;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
 
-  &__joycon {
+  &__home {
     background: #ab000e;
     flex-basis: 50%;
     display: flex;
@@ -83,6 +83,12 @@ export default {
 
     svg {
       width: 35px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
 
       path {
         stroke: #ff7174;
@@ -100,6 +106,12 @@ export default {
 
     svg {
       width: 35px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
 
       path {
         stroke: #ff7174;
@@ -109,11 +121,10 @@ export default {
   }
 }
 
-.sort-dropdown {
+.solo-battle {
   position: relative;
   margin: 2.5px 0px 0px 20px;
   font-family: 'Roboto Condensed', sans-serif;
-  cursor: pointer;
   background: #111;
   display: flex;
   justify-content: center;
@@ -146,10 +157,6 @@ export default {
       3.5% 100%,
       0% 50%
     );
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 }
 </style>
