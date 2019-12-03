@@ -30,5 +30,10 @@ export default {
     getThumbnailURL() {
       return require(`../assets/thumbnails/${this.parsedNameForAssets}-min.png`)
     }
+  },
+  methods: {
+    getStockIcon(altNumber) {
+      return require(`../assets/characters/${this.parsedNameForAssets}/stock${altNumber}.png`)
+    }
   }
 }

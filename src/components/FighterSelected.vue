@@ -23,7 +23,46 @@
               X
             </div>
             <div class="alt-icons">
-              <img :src="getSeriesIcon" @click="changeFighterAltSpecific(3)" />
+              <img
+                :src="getStockIcon(0)"
+                @click="changeFighterAltSpecific(0)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(1)"
+                @click="changeFighterAltSpecific(1)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(2)"
+                @click="changeFighterAltSpecific(2)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(3)"
+                @click="changeFighterAltSpecific(3)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(4)"
+                @click="changeFighterAltSpecific(4)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(5)"
+                @click="changeFighterAltSpecific(5)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(6)"
+                @click="changeFighterAltSpecific(6)"
+                class="alt-icons__image"
+              />
+              <img
+                :src="getStockIcon(7)"
+                @click="changeFighterAltSpecific(7)"
+                class="alt-icons__image"
+              />
             </div>
           </div>
         </div>
@@ -245,6 +284,22 @@ export default {
 .alt-icons {
   display: flex;
   justify-content: center;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  margin-top: auto;
+  width: 80%;
+
+  &__image {
+    width: 48px;
+    cursor: pointer;
+    @media screen and (max-width: 425px) {
+      width: 32px;
+    }
+
+    @media screen and (max-width: 350px) {
+      width: 24px;
+    }
+  }
 }
 
 .fighter-info-wrapper {
