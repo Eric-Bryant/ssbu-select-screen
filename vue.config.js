@@ -5,10 +5,6 @@ module.exports = {
     name: 'SSBU Character Select Screen',
     themeColor: '#FF3737',
     appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: 'black',
-    workboxPluginMode: 'InjectManifest',
-    workboxOptions: {
-      swSrc: 'public/service-worker.js'
-    }
+    appleMobileWebAppStatusBarStyle: 'black'
   }
 }
