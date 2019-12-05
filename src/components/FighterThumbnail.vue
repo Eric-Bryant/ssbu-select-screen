@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions } from 'vuex'
 import fighterAssets from '../mixins/fighterAssets'
 
 export default {
@@ -25,11 +25,8 @@ export default {
   data() {
     return {}
   },
-  computed: {
-    ...mapState(['altOptionsShowing'])
-  },
   methods: {
-    ...mapActions(['setSelectedFighterState', 'setAltOptionsShowingState']),
+    ...mapActions(['setSelectedFighterState']),
     selectFighter() {
       this.fighter.isSelected = !this.fighter.isSelected
 
@@ -43,10 +40,6 @@ export default {
         announcer.play()
       } else {
         this.setSelectedFighterState('')
-      }
-
-      if (this.altOptionsShowing) {
-        this.setAltOptionsShowingState()
       }
     }
   }

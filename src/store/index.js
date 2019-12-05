@@ -8,8 +8,7 @@ export default new Vuex.Store({
     fighters: [],
     fightersLoaded: false,
     bioOpen: false,
-    sortType: 'Default',
-    altOptionsShowing: false
+    sortType: 'Default'
   },
   getters: {
     getFighters: state => {
@@ -58,9 +57,6 @@ export default new Vuex.Store({
     },
     SET_SORT_TYPE_STATE: (state, sortType) => {
       state.sortType = sortType
-    },
-    SET_ALT_OPTIONS_STATE: state => {
-      state.altOptionsShowing = !state.altOptionsShowing
     }
   },
   actions: {
@@ -78,9 +74,6 @@ export default new Vuex.Store({
     },
     setSortTypeState: (context, sortType) => {
       context.commit('SET_SORT_TYPE_STATE', sortType)
-    },
-    setAltOptionsShowingState: context => {
-      context.commit('SET_ALT_OPTIONS_STATE')
     }
   },
   modules: {}
