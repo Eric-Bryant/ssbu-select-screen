@@ -1,33 +1,8 @@
-# ssbu-select-screen
+# SSBU Select
 
 [Sprite Reference](https://www.spriters-resource.com/nintendo_switch/supersmashbrosultimate/)
 
 [Sound Reference](https://www.sounds-resource.com/nintendo_switch/supersmashbrosultimate/)
 
-## Project setup
-
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## License
+The Vue.js Framework is open-sourced software licensed under the [MIT License](https://github.com/vuejs/vuejs.org/blob/master/LICENSE)
