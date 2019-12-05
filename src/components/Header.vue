@@ -20,6 +20,9 @@
     <div class="solo-battle">
       <div class="solo-battle__label">Solo Battle</div>
     </div>
+    <div style="z-index: 1">
+      <button class="install-prompt">Download App</button>
+    </div>
   </header>
 </template>
 
