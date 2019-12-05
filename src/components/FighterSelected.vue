@@ -1,8 +1,6 @@
 <template>
   <div class="fighter-selection">
     <div class="fighter-selection-box">
-      <div class="fighter-selection-box__border-top"></div>
-      <div class="fighter-selection-box__border-left"></div>
       <div class="fighter-portrait">
         <div class="selected-fighter">
           <transition name="slide-fade">
@@ -18,7 +16,7 @@
           <div class="alt-options" v-if="altOptionsShowing">
             <div
               class="alt-options__close-btn"
-              @click="altOptionsShowing = !altOptionsShowing"
+              @click="setAltOptionsShowingState()"
             >
               X
             </div>
@@ -91,7 +89,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import fighterAssets from '../mixins/fighterAssets'
 
 export default {
@@ -114,13 +112,15 @@ export default {
     }
   },
   mixins: [fighterAssets],
-  data() {
-    return {
-      altOptionsShowing: false
-    }
+  computed: {
+    ...mapState(['altOptionsShowing'])
   },
   methods: {
-    ...mapActions(['setFighterAltState', 'setBioOpenState']),
+    ...mapActions([
+      'setFighterAltState',
+      'setBioOpenState',
+      'setAltOptionsShowingState'
+    ]),
     changeFighterAlt() {
       if (this.fighter.alt < 7 && !this.parsedNameForAssets.includes('mii')) {
         this.fighter.alt++
@@ -134,16 +134,20 @@ export default {
       if (!this.parsedNameForAssets.includes('mii')) {
         this.fighter.alt = altNumber
         this.setFighterAltState(this.fighter)
-        this.altOptionsShowing = !this.altOptionsShowing
+        this.setAltOptionsShowingState()
       }
     },
     showAltOptions() {
       if (!this.parsedNameForAssets.includes('mii')) {
-        this.altOptionsShowing = !this.altOptionsShowing
+        this.setAltOptionsShowingState()
       }
     },
     openBio() {
       this.setBioOpenState()
+
+      if (this.altOptionsShowing) {
+        this.setAltOptionsShowingState()
+      }
     }
   }
 }
@@ -164,6 +168,8 @@ export default {
   width: 600px;
   overflow: hidden;
   position: relative;
+  border-top: 8px solid black;
+  border-left: 3px solid black;
   border-bottom: 3px solid black;
   border-right: 3px solid black;
   clip-path: polygon(35px 0, 100% 0, 100% 100%, 0 100%, 0 35px);
@@ -172,32 +178,12 @@ export default {
     position: absolute;
     content: '';
     top: 0px;
-    left: -25px;
+    left: -40px;
     width: 125px;
     height: 15px;
     z-index: 99;
     background: black;
     transform: rotate(-45deg);
-  }
-
-  &__border-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background: black;
-    z-index: 5;
-  }
-
-  &__border-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: black;
-    z-index: 5;
   }
 }
 
@@ -268,7 +254,7 @@ export default {
   &__close-btn {
     position: absolute;
     cursor: pointer;
-    top: 8px;
+    top: 0px;
     padding: 5px 15px;
     background: #e7e7e7;
     font-size: 1rem;
