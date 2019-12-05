@@ -4,6 +4,9 @@
 
 [Sound Reference](https://www.sounds-resource.com/nintendo_switch/supersmashbrosultimate/)
 
+* [License](#license)
+* [Copyright Notice](#copyright-notice)
+
 ## License
 The Vue.js Framework is open-sourced software licensed under the [MIT License](https://github.com/vuejs/vuejs.org/blob/master/LICENSE)
 
