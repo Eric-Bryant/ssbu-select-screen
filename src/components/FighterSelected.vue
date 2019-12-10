@@ -22,44 +22,11 @@
             </div>
             <div class="alt-icons">
               <img
-                :src="getStockIcon(0)"
-                @click="changeFighterAltSpecific(0)"
+                :src="getStockIcon(index)"
+                @click="changeFighterAltSpecific(index)"
                 class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(1)"
-                @click="changeFighterAltSpecific(1)"
-                class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(2)"
-                @click="changeFighterAltSpecific(2)"
-                class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(3)"
-                @click="changeFighterAltSpecific(3)"
-                class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(4)"
-                @click="changeFighterAltSpecific(4)"
-                class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(5)"
-                @click="changeFighterAltSpecific(5)"
-                class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(6)"
-                @click="changeFighterAltSpecific(6)"
-                class="alt-icons__image"
-              />
-              <img
-                :src="getStockIcon(7)"
-                @click="changeFighterAltSpecific(7)"
-                class="alt-icons__image"
+                v-for="index in [0, 1, 2, 3, 4, 5, 6, 7]"
+                :key="index"
               />
             </div>
           </div>
