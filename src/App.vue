@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <TheHeader />
     <FighterGrid v-if="fightersLoaded" />
     <p class="loading-msg" v-else>Loading fighters...</p>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Header from './components/Header'
+import TheHeader from './components/TheHeader'
 import FighterGrid from './components/FighterGrid'
 import FighterSelected from './components/FighterSelected'
 import FighterBio from './components/FighterBio'
@@ -21,7 +21,7 @@ import axios from 'axios'
 
 export default {
   name: 'app',
-  components: { Header, FighterGrid, FighterSelected, FighterBio },
+  components: { TheHeader, FighterGrid, FighterSelected, FighterBio },
   computed: {
     ...mapState(['fightersLoaded', 'bioOpen']),
     ...mapGetters(['getSelectedFighter'])

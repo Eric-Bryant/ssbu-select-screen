@@ -27,7 +27,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Header',
+  name: 'TheHeader',
   methods: {
     ...mapActions(['setSortTypeState']),
     setSortType(sortType) {
