@@ -108,7 +108,7 @@ export default {
     .mobile-menu {
       position: relative;
       display: block;
-      width: 35px;
+      width: 24px;
       height: 24px;
 
       @media screen and (min-width: 425.02px) {
@@ -119,7 +119,7 @@ export default {
         position: absolute;
         border-top: 3px solid #ff7174;
         top: calc(24px / 2);
-        width: 35px;
+        width: 100%;
 
         &:before {
           position: absolute;
