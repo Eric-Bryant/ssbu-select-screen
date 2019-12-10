@@ -104,6 +104,10 @@ export default {
   @media screen and (max-width: 769px) {
     width: 100vw;
   }
+
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 }
 
 .fade-scale-enter-active,
