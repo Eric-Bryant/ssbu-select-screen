@@ -128,6 +128,11 @@ export default {
   margin: 10px 0 0 0;
   padding: 11px 0;
   background: linear-gradient(90deg, #462c97, #462c97, #6ad3ed, #6ad3ed, white);
+
+  @media screen and (max-width: 425px) {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .fighter-selection-box {

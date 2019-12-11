@@ -98,7 +98,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25vh;
+    height: 50vh;
   }
 
   &__text {
