@@ -5,6 +5,7 @@
     @click="selectFighter"
   >
     <img :src="getStockIcon(0)" class="mobile-fighter-thumbnail__stock-icon" />
+    <p class="mobile-fighter-thumbnail__fighter-id">{{ parsedFighterID }}</p>
     <p class="mobile-fighter-thumbnail__name">{{ fighter.name }}</p>
   </div>
 </template>
@@ -63,7 +64,7 @@ export default {
   margin-right: 1rem;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 48px 0.125fr 1fr;
   align-items: center;
 
   &:nth-child(2) {
@@ -78,7 +79,8 @@ export default {
     width: 100%;
   }
 
-  &__name {
+  &__name,
+  &__fighter-id {
     font-family: 'Roboto Condensed', sans-serif;
     color: #e7e7e7;
     font-weight: bold;

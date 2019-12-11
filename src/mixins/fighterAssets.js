@@ -18,6 +18,17 @@ export default {
 
       return parsedFranchise
     },
+    parsedFighterID() {
+      let parsedID = this.fighter.id
+
+      if (parsedID < 10) {
+        parsedID = `0${parsedID}`
+      } else {
+        parsedID = parsedID.toString()
+      }
+
+      return parsedID.replace(/\.1/g, 'ᵋ')
+    },
     getSelectedFighterImage() {
       return require(`../assets/characters/${this.parsedNameForAssets}/selected${this.fighter.alt}-min.png`)
     },
