@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <TheHeader />
+    <MobileMenu v-if="mobileMenuShowing" />
     <FighterGrid v-if="fightersLoaded" />
     <p class="loading-msg" v-else>Loading fighters...</p>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
@@ -16,14 +17,21 @@ import TheHeader from './components/TheHeader'
 import FighterGrid from './components/FighterGrid'
 import FighterSelected from './components/FighterSelected'
 import FighterBio from './components/FighterBio'
+import MobileMenu from './components/MobileMenu'
 import { mapActions, mapState, mapGetters } from 'vuex'
 import axios from 'axios'
 
 export default {
   name: 'app',
-  components: { TheHeader, FighterGrid, FighterSelected, FighterBio },
+  components: {
+    TheHeader,
+    FighterGrid,
+    FighterSelected,
+    FighterBio,
+    MobileMenu
+  },
   computed: {
-    ...mapState(['fightersLoaded', 'bioOpen']),
+    ...mapState(['fightersLoaded', 'bioOpen', 'mobileMenuShowing']),
     ...mapGetters(['getSelectedFighter'])
   },
   methods: {

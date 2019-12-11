@@ -9,7 +9,8 @@ export default new Vuex.Store({
     fightersLoaded: false,
     bioOpen: false,
     sortType: 'Default',
-    altOptionsShowing: false
+    altOptionsShowing: false,
+    mobileMenuShowing: false
   },
   getters: {
     getFighters: state => {
@@ -61,6 +62,9 @@ export default new Vuex.Store({
     },
     SET_ALT_OPTIONS_STATE: state => {
       state.altOptionsShowing = !state.altOptionsShowing
+    },
+    SET_MOBILE_MENU_STATE: state => {
+      state.mobileMenuShowing = !state.mobileMenuShowing
     }
   },
   actions: {
@@ -81,6 +85,9 @@ export default new Vuex.Store({
     },
     setAltOptionsShowingState: context => {
       context.commit('SET_ALT_OPTIONS_STATE')
+    },
+    setMobileMenuShowingState: context => {
+      context.commit('SET_MOBILE_MENU_STATE')
     }
   },
   modules: {}
