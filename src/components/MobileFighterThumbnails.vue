@@ -66,7 +66,7 @@ export default {
   grid-template-columns: 48px 1fr;
   align-items: center;
 
-  &:first-child {
+  &:nth-child(2) {
     margin-top: 1rem;
   }
 

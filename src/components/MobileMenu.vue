@@ -43,6 +43,8 @@ export default {
   top: 0;
   left: 0;
   padding-left: 1rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-heading {
