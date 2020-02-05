@@ -55,6 +55,7 @@ export default {
   position: relative;
   // flex-basis: 125px;
   flex-basis: calc(100vw / 13);
+  height: 84px;
   margin: 2.5px;
 
   &:hover {
