@@ -53,12 +53,16 @@ export default {
 <style lang="scss" scoped>
 .fighter-thumbnail {
   position: relative;
-  flex-basis: 125px;
-  height: 84px;
+  // flex-basis: 125px;
+  flex-basis: calc(100vw / 13);
   margin: 2.5px;
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-basis: calc(100vw / 14);
   }
 
   &--selected {
@@ -115,6 +119,15 @@ export default {
 
     &:hover {
       cursor: pointer;
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 14px;
+      line-height: 1.25em;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
     }
   }
 }

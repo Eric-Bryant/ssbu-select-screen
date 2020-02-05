@@ -7,7 +7,7 @@
     <div class="mobile-instructions">
       <p class="mobile-instructions__text">
         Select any fighter by tapping the 3 horizontal bars in the top left. Try
-        checking this out on a high resolution device (1920x1080)!
+        checking this out on a larger device!
       </p>
     </div>
     <FighterGrid v-if="fightersLoaded" />

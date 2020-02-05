@@ -95,15 +95,11 @@ export default {
 <style lang="scss" scoped>
 .fighter-grid {
   margin: 0 auto;
-  width: 85vw;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
-
-  @media screen and (max-width: 769px) {
-    width: 100vw;
-  }
 
   @media screen and (max-width: 425px) {
     display: none;
