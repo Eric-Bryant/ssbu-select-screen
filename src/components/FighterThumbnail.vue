@@ -119,7 +119,7 @@ export default {
   }
 }
 
-@for $i from 1 through 79 {
+@for $i from 1 through 80 {
   .fighter-thumbnail:nth-child(#{$i}) .fighter-thumbnail__image {
     background: linear-gradient(to bottom right, #37c4ef, #e9c531);
     background-size: 400% 400%;
