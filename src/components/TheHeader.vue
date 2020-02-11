@@ -99,7 +99,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 767px) {
       .house-icon {
         display: none;
       }
@@ -111,7 +111,7 @@ export default {
       width: 24px;
       height: 24px;
 
-      @media screen and (min-width: 425.02px) {
+      @media screen and (min-width: 767.02px) {
         display: none;
       }
 

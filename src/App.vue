@@ -94,7 +94,7 @@ img {
   padding: 1rem;
   display: none;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 767px) {
     display: flex;
     justify-content: center;
     align-items: center;

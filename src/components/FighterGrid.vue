@@ -101,7 +101,7 @@ export default {
   justify-content: center;
   overflow: hidden;
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 }

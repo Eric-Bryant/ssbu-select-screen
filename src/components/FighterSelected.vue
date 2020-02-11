@@ -129,7 +129,7 @@ export default {
   padding: 11px 0;
   background: linear-gradient(90deg, #462c97, #462c97, #6ad3ed, #6ad3ed, white);
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     bottom: 0;
   }
@@ -200,7 +200,7 @@ export default {
     max-width: 110%;
     cursor: pointer;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 767px) {
       transform: translate(0px, 10px);
     }
   }
@@ -301,7 +301,7 @@ export default {
     rgba(255, 55, 55, 1) 100%
   );
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 767px) {
     padding-right: 15px;
   }
 
@@ -323,7 +323,7 @@ export default {
     width: 50%;
     opacity: 0.8;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 767px) {
       top: 5px;
     }
   }
