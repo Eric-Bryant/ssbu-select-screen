@@ -47,7 +47,7 @@ export default {
   },
   created() {
     axios
-      .get('https://ssbu-character-select.firebaseio.com/fighters.json')
+      .get('/fighters.json')
       .then(response => {
         this.setInitialFighterState(response.data)
       })
