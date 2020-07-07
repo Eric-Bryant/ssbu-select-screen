@@ -8,7 +8,7 @@
               v-if="fighter.id != null"
               :src="getSelectedFighterImage"
               :key="fighter.name"
-              @click="showAltOptions"
+              @click="changeFighterAlt"
               :class="parsedNameForAssets"
               class="selected-fighter__image"
             />
@@ -47,6 +47,13 @@
               @click="openBio"
             >
               View Bio
+            </button>
+            <button
+              v-if="fighter.id != null"
+              class="fighter-info__btn"
+              @click="showAltOptions"
+            >
+              {{ altOptionsShowing ? 'Hide Alts' : 'Show Alts' }}
             </button>
           </div>
         </div>
@@ -362,6 +369,10 @@ export default {
 
     &:hover {
       opacity: 0.75;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
     }
   }
 }
