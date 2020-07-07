@@ -49,7 +49,7 @@
               View Bio
             </button>
             <button
-              v-if="fighter.id != null"
+              v-if="!isMiiOrNull"
               class="fighter-info__btn"
               @click="showAltOptions"
             >
@@ -87,7 +87,14 @@ export default {
   },
   mixins: [fighterAssets],
   computed: {
-    ...mapState(['altOptionsShowing'])
+    ...mapState(['altOptionsShowing']),
+    isMiiOrNull() {
+      if (this.fighter.name.includes('Mii') || this.fighter.id == null) {
+        return true
+      }
+
+      return false
+    }
   },
   methods: {
     ...mapActions([
