@@ -133,7 +133,7 @@ export default {
   }
 }
 
-@for $i from 1 through 80 {
+@for $i from 1 through 81 {
   .fighter-thumbnail:nth-child(#{$i}) .fighter-thumbnail__image {
     background: linear-gradient(to bottom right, #37c4ef, #e9c531);
     background-size: 400% 400%;
@@ -145,6 +145,7 @@ export default {
     } @else if ($i >= 37 and $i <= 42) {
     } @else if ($i >= 49 and $i <= 53) {
     } @else if ($i >= 61 and $i <= 64) {
+    } @else if ($i >= 73 and $i <= 74) {
     } @else {
       background-position: 100% 100%;
       animation-delay: 4s;
