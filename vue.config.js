@@ -1,4 +1,3 @@
 module.exports = {
-  publicPath:
-    process.env.NODE_ENV === 'production' ? '/ssbu-character-select/' : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/'
 }
