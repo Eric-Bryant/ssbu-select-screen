@@ -133,19 +133,19 @@ export default {
   }
 }
 
-@for $i from 1 through 81 {
+@for $i from 1 through 83 {
   .fighter-thumbnail:nth-child(#{$i}) .fighter-thumbnail__image {
     background: linear-gradient(to bottom right, #37c4ef, #e9c531);
     background-size: 400% 400%;
     background-position: 0% 0%;
     animation: animateFighterThumbnail 8s infinite alternate;
-    @if ($i >= 1 and $i <= 9) {
-    } @else if ($i >= 13 and $i <= 20) {
-    } @else if ($i >= 25 and $i <= 31) {
-    } @else if ($i >= 37 and $i <= 42) {
-    } @else if ($i >= 49 and $i <= 53) {
-    } @else if ($i >= 61 and $i <= 64) {
-    } @else if ($i >= 73 and $i <= 74) {
+    @if ($i >= 1 and $i <= 10) {
+    } @else if ($i >= 13 and $i <= 21) {
+    } @else if ($i >= 25 and $i <= 32) {
+    } @else if ($i >= 37 and $i <= 43) {
+    } @else if ($i >= 49 and $i <= 54) {
+    } @else if ($i >= 61 and $i <= 65) {
+    } @else if ($i >= 73 and $i <= 76) {
     } @else {
       background-position: 100% 100%;
       animation-delay: 4s;
