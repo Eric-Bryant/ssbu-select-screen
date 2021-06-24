@@ -6,6 +6,7 @@ export default {
         .replace(/ /g, '-')
         .replace(/\./g, '')
         .replace(/&/g, 'and')
+        .replace(/\//g, 'and')
 
       return parsedName
     },
