@@ -10,8 +10,10 @@
         checking this out on a larger device!
       </p>
     </div>
-    <FighterGrid v-if="fightersLoaded" />
-    <p class="loading-msg" v-else>Loading fighters...</p>
+    <div v-if="!isMobile">
+      <FighterGrid v-if="fightersLoaded" />
+      <p class="loading-msg" v-else>Loading fighters...</p>
+    </div>
     <FighterSelected v-if="getSelectedFighter" :fighter="getSelectedFighter" />
     <FighterSelected v-else-if="fightersLoaded" />
     <transition name="fade-scale">
@@ -40,7 +42,10 @@ export default {
   },
   computed: {
     ...mapState(['fightersLoaded', 'bioOpen', 'mobileMenuShowing']),
-    ...mapGetters(['getSelectedFighter'])
+    ...mapGetters(['getSelectedFighter']),
+    isMobile() {
+      return screen.width <= 767
+    }
   },
   methods: {
     ...mapActions(['setInitialFighterState'])

@@ -10,6 +10,11 @@
     <img :src="getSeriesIcon" style="display:none;" />
     <img :src="getFranchiseLogo" style="display:none;" />
     <img :src="getStockIcon(0)" style="display:none;" />
+    <audio
+      :src="require(`../assets/sounds/${parsedNameForAssets}.wav`)"
+      preload="auto"
+      style="display: none"
+    ></audio>
   </div>
 </template>
 
