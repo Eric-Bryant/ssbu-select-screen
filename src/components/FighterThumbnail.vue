@@ -54,16 +54,17 @@ export default {
 .fighter-thumbnail {
   position: relative;
   // flex-basis: 125px;
-  flex-basis: calc(100vw / 13);
+  flex-basis: calc(100vw / 14);
   height: 84px;
   margin: 2.5px;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
   }
 
   @media screen and (max-width: 768px) {
-    flex-basis: calc(100vw / 14);
+    flex-basis: calc(100vw / 13);
   }
 
   &--selected {
@@ -122,6 +123,11 @@ export default {
       cursor: pointer;
     }
 
+    @media screen and (max-width: 1500px) {
+      font-size: 1rem;
+      line-height: 1.25em;
+    }
+
     @media screen and (max-width: 1024px) {
       font-size: 14px;
       line-height: 1.25em;
@@ -133,19 +139,19 @@ export default {
   }
 }
 
-@for $i from 1 through 84 {
+@for $i from 1 through 85 {
   .fighter-thumbnail:nth-child(#{$i}) .fighter-thumbnail__image {
     background: linear-gradient(to bottom right, #37c4ef, #e9c531);
     background-size: 400% 400%;
     background-position: 0% 0%;
     animation: animateFighterThumbnail 8s infinite alternate;
     @if ($i >= 1 and $i <= 10) {
-    } @else if ($i >= 13 and $i <= 21) {
-    } @else if ($i >= 25 and $i <= 32) {
-    } @else if ($i >= 37 and $i <= 43) {
-    } @else if ($i >= 49 and $i <= 54) {
-    } @else if ($i >= 61 and $i <= 65) {
-    } @else if ($i >= 73 and $i <= 76) {
+    } @else if ($i >= 14 and $i <= 22) {
+    } @else if ($i >= 27 and $i <= 34) {
+    } @else if ($i >= 40 and $i <= 46) {
+    } @else if ($i >= 53 and $i <= 58) {
+    } @else if ($i >= 66 and $i <= 70) {
+    } @else if ($i == 79) {
     } @else {
       background-position: 100% 100%;
       animation-delay: 4s;
