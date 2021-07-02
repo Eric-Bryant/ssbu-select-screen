@@ -6,6 +6,10 @@
   >
     <img :src="getThumbnailURL" class="fighter-thumbnail__image" />
     <p class="fighter-thumbnail__name">{{ fighter.name }}</p>
+    <img :src="getSelectedFighterImage" style="display:none;" />
+    <img :src="getSeriesIcon" style="display:none;" />
+    <img :src="getFranchiseLogo" style="display:none;" />
+    <img :src="getStockIcon(0)" style="display:none;" />
   </div>
 </template>
 
