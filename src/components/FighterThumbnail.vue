@@ -160,7 +160,7 @@ export default {
     } @else if ($i >= 40 and $i <= 46) {
     } @else if ($i >= 53 and $i <= 58) {
     } @else if ($i >= 66 and $i <= 70) {
-    } @else if ($i == 79) {
+    } @else if ($i >= 79 and $i <= 80) {
     } @else {
       background-position: 100% 100%;
       animation-delay: 4s;
