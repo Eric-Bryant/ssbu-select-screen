@@ -139,8 +139,8 @@ export default {
   display: flex;
   justify-content: center;
   width: 100vw;
-  margin: 10px 0 0 0;
-  padding: 11px 0;
+  margin: auto 0 0 0;
+  padding: 10px 0;
   background: linear-gradient(90deg, #462c97, #462c97, #6ad3ed, #6ad3ed, white);
 
   @media screen and (max-width: 767px) {

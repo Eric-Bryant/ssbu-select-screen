@@ -94,7 +94,7 @@ export default {
 
 <style lang="scss" scoped>
 .fighter-grid {
-  margin: 0 auto;
+  margin: 0 auto 10px;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;

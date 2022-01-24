@@ -83,6 +83,12 @@ img {
   max-width: 100%;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .loading-msg {
   font-family: 'Roboto Condensed', sans-serif;
   color: #e7e7e7;
