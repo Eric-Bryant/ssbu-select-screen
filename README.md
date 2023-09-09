@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bb3b26b7-59cb-4a23-8654-83e33963f4ad/deploy-status)](https://app.netlify.com/sites/comforting-manatee-4df87d/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7aeb0912-c745-49fb-a53d-d13757f2c5e5/deploy-status)](https://app.netlify.com/sites/confident-elion-fb0c4b/deploys)
 
 # SSBU Select
 

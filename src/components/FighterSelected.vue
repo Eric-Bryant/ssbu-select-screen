@@ -103,20 +103,18 @@ export default {
       'setAltOptionsShowingState'
     ]),
     changeFighterAlt() {
-      localFighter = this.fighter
       if (this.fighter.alt < 7 && !this.parsedNameForAssets.includes('mii')) {
-        localFighter.alt++
-        this.setFighterAltState(localFighter)
+        this.fighter.alt++
+        this.setFighterAltState(this.fighter)
       } else if (this.fighter.alt == 7) {
-        localFighter.alt = 0
-        this.setFighterAltState(localFighter)
+        this.fighter.alt = 0
+        this.setFighterAltState(this.fighter)
       }
     },
     changeFighterAltSpecific(altNumber) {
       if (!this.parsedNameForAssets.includes('mii')) {
-        localFighter = this.fighter
-        localFighter.alt = altNumber
-        this.setFighterAltState(localFighter)
+        this.fighter.alt = altNumber
+        this.setFighterAltState(this.fighter)
         this.setAltOptionsShowingState()
       }
     },
