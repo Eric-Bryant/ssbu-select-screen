@@ -31,21 +31,27 @@ export default {
       return parsedID.replace(/\.1/g, 'ᵋ')
     },
     getSelectedFighterImage() {
-      return require(`../assets/characters/${this.parsedNameForAssets}/selected${this.fighter.alt}-min.png`)
+      return require(
+        `../assets/characters/${this.parsedNameForAssets}/selected${this.fighter.alt}-min.png`,
+      )
     },
     getSeriesIcon() {
-      return require(`../assets/series-icons/${this.parsedFranchiseForAssets}.png`)
+      return require(
+        `../assets/series-icons/${this.parsedFranchiseForAssets}.png`,
+      )
     },
     getFranchiseLogo() {
       return require(`../assets/logos/${this.parsedFranchiseForAssets}.png`)
     },
     getThumbnailURL() {
       return require(`../assets/thumbnails/${this.parsedNameForAssets}-min.png`)
-    }
+    },
   },
   methods: {
     getStockIcon(altNumber) {
-      return require(`../assets/characters/${this.parsedNameForAssets}/stock${altNumber}.png`)
-    }
-  }
+      return require(
+        `../assets/characters/${this.parsedNameForAssets}/stock${altNumber}.png`,
+      )
+    },
+  },
 }

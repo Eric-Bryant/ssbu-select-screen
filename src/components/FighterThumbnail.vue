@@ -37,10 +37,11 @@ export default {
   methods: {
     ...mapActions(['setSelectedFighterState', 'setAltOptionsShowingState']),
     selectFighter() {
-      this.fighter.isSelected = !this.fighter.isSelected
+      localFighter = this.fighter
+      localFighter = !this.fighter.isSelected
 
       if (this.fighter.isSelected) {
-        this.setSelectedFighterState(this.fighter.name)
+        this.setSelectedFighterState(localFighter)
 
         const announcer = new Audio(
           require(`../assets/sounds/${this.parsedNameForAssets}.wav`)
