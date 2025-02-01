@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7aeb0912-c745-49fb-a53d-d13757f2c5e5/deploy-status)](https://app.netlify.com/sites/confident-elion-fb0c4b/deploys)
-
 # SSBU Select
 
 [Sprite Reference](https://www.spriters-resource.com/nintendo_switch/supersmashbrosultimate/)
